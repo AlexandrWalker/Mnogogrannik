@@ -1,0 +1,19 @@
+@import 'vars';
+@import 'fonts';
+@import 'reset';
+@import 'libs';
+@import 'global';
+
+/* component styles */
+@import 'elements/dropdown.scss';
+@import 'elements/footer.scss';
+@import 'elements/header.scss';
+@import 'elements/mobile-menu.scss';
+@import 'elements/plate.scss';
+@import 'elements/popup.scss';
+
+/* main page */
+@import 'pages/index.scss';
+
+/* adaptive styles */
+@import 'media';

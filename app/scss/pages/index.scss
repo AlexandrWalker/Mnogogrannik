@@ -1,0 +1,85 @@
+.hero {
+  height: fit-content;
+  // min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--primary-black);
+
+  &__inner {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__content {
+    width: 50%;
+    padding: 20rem 0 20rem 8rem;
+    position: relative;
+    z-index: 20;
+    // background-color: var(--primary-black);
+    // clip-path: polygon(100% 0, 100% 43%, 68% 100%, 0 100%, 0 0);
+
+    h1 {
+      margin-bottom: 4rem;
+    }
+
+    p {
+      color: var(--white);
+      margin-bottom: 5rem;
+      max-width: 62rem;
+    }
+  }
+
+  &__img {
+    width: 50%;
+    min-height: 100%;
+    object-fit: cover;
+    position: relative;
+    z-index: 8;
+  }
+
+  .component-1 {
+    display: block;
+    width: 128.9rem;
+    height: 224.3rem;
+    background-color: transparent;
+    background-image: url(./../../images/tmp/rombs/rombs-stroke-accent.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+    bottom: 57%;
+    left: 50%;
+    z-index: 12;
+    transform: translateX(-50%);
+  }
+
+  .component-2 {
+    display: block;
+    width: 211.5rem;
+    height: 368.3rem;
+    background-color: transparent;
+    background-image: url(./../../images/tmp/rombs/rombs-stroke-white.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+    bottom: -25.7rem;
+    left: 50%;
+    z-index: 11;
+    transform: translateX(-50%);
+  }
+
+  .component-3 {
+    display: block;
+    width: 211.5rem;
+    height: 368.3rem;
+    background-color: transparent;
+    background-image: url(./../../images/tmp/rombs/rombs-fill-black.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+    bottom: -25.7rem;
+    left: 50%;
+    z-index: 9;
+    transform: translateX(-50%);
+    mix-blend-mode: overlay;
+  }
+}

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="200" height="200"><svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="200" height="200" fill="#F66C4C"></rect>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M162.25 52.6108L99.9999 17L37.7494 52.6108L37.7811 52.6293L37.7494 52.6459L99.9999 88.2495L162.25 52.6459L162.219 52.6293L162.25 52.6108ZM99.9999 64.5078L79.2501 52.6385L79.2185 52.6219L79.2501 52.6034L99.9999 40.7362L120.749 52.6108L120.781 52.6293L120.749 52.6459L99.9999 64.5078Z" fill="white"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M162.251 147.574L183 135.707V64.2488L99.9999 111.719L17 64.2488V135.707L37.7495 147.574V99.8521L99.9999 135.455L162.251 99.8521V147.574Z" fill="white"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M141.51 135.522L141.501 135.528L99.9998 159.264L58.4988 135.528L58.4894 135.522V159.258L58.4988 159.264L99.9998 183L141.501 159.264L141.51 159.258V135.522Z" fill="white"></path>
+</svg><style>@media (prefers-color-scheme: light) { :root { filter: none; } }
+@media (prefers-color-scheme: dark) { :root { filter: none; } }
+</style></svg>
