@@ -1,1 +1,49 @@
-.menu {}
+.menu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: -100%;
+  padding: 5rem 11rem 6rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  &__head {
+
+  }
+
+  &__list {
+
+    li {
+
+      &:not(:last-child) {
+        margin-bottom: 3rem;
+      }
+    }
+
+    a {
+      font-weight: 700;
+      font-size: 2.4rem;
+      line-height: 100%;
+      text-transform: uppercase;
+      color: inherit;
+
+      &:hover {
+        color: var(--primary-accent);
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__foot {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+}

@@ -14,7 +14,7 @@
       transition: all 0.3s ease;
       opacity: 1;
 
-      &:hover {
+      &:not(.swiper-pagination-bullet-active):hover {
         background-color: var(--primary-black);
       }
 

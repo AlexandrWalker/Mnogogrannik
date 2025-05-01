@@ -20,7 +20,8 @@ body {
 }
 
 section {
-  margin-bottom: 6rem;
+  overflow: hidden;
+  margin-bottom: 12rem;
 }
 
 .wrapper {
@@ -57,6 +58,10 @@ section {
   height: 100dvh !important;
 }
 
+.section__head {
+  margin-bottom: 5rem;
+}
+
 h1 {
   font-weight: 700;
   font-size: 10rem;
@@ -70,11 +75,10 @@ h1 {
   }
 }
 
-.block-title {
+h2 {
   font-weight: 700;
   font-size: 8rem;
   line-height: 100%;
-  text-transform: uppercase;
   color: var(--primary-black);
   font-kerning: none;
 }

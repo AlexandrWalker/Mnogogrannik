@@ -9,7 +9,7 @@
       spaceBetween: 0,
       centeredSlides: true,
       loop: true,
-      speed: 800,
+      speed: 500,
       effect: "fade",
       // autoplay: {
       //   delay: 5000,
@@ -25,23 +25,31 @@
       },
     });
 
+    var work__items = new Swiper(".work__items", {
+      slidesPerView: 'auto',
+      slidesPerGroup: 1,
+      speed: 600,
+      breakpoints: {
+        600: {
+          slidesPerView: 6,
+        }
+      }
+    });
 
-    // const header = document.getElementById('header');
-    // const scrollPrev = 0;
 
-    // window.addEventListener('scroll', function () {
-    //   const scrolled = window.pageYOffset;
+    const header = document.getElementById('header');
+    const scrollPrev = 0;
 
-    //   console.log(scrolled);
+    window.addEventListener('scroll', function () {
+      const scrolled = window.pageYOffset;
 
-    //   if (scrolled > 100 && scrolled > scrollPrev) {
-    //     header.classList.add('out');
-    //   } else {
-    //     header.classList.remove('out');
-    //   }
+      if (scrolled > 100 && scrolled > scrollPrev) {
+        header.classList.add('out');
+      } else {
+        header.classList.remove('out');
+      }
 
-    //   scrollPrev = scrolled;
-    // });
+    });
 
     gsap.registerPlugin(ScrollTrigger);
 
@@ -63,14 +71,20 @@
     });
     gsap.ticker.lagSmoothing(0);
 
-    const component1 = document.querySelector(".component-1");
-    const component2 = document.querySelector(".component-2");
-    const component3 = document.querySelector(".component-3");
-    const component4 = document.querySelector(".component-4");
+    const component1 = document.querySelector(".component--1");
+    const component2 = document.querySelector(".component--2");
+    const component3 = document.querySelector(".component--3");
+    const component4 = document.querySelector(".component--4");
+
+    const component1Item = component1.querySelector(".component__item");
+    const component2Item = component2.querySelector(".component__item");
+    const component3Item = component3.querySelector(".component__item");
+    const component4Item = component4.querySelector(".component__item");
+
     const hero = document.getElementById("hero");
     const heroContent = document.querySelectorAll(".hero__content");
 
-    gsap.from(component1, {
+    gsap.from(component1Item, {
       opacity: 1,
       y: -500,
       duration: 0.6,
@@ -83,7 +97,7 @@
       }
     });
 
-    gsap.from(component2, {
+    gsap.from(component2Item, {
       opacity: 1,
       y: -1200,
       duration: 0.5,
@@ -97,7 +111,7 @@
       }
     });
 
-    gsap.from(component3, {
+    gsap.from(component3Item, {
       opacity: 1,
       y: -1200,
       duration: 0.5,
@@ -111,7 +125,7 @@
       }
     });
 
-    gsap.from(component4, {
+    gsap.from(component4Item, {
       opacity: 1,
       y: 1200,
       duration: 0.6,
@@ -124,19 +138,6 @@
       }
     });
 
-    // gsap.from(heroContent, {
-    //   opacity: 1,
-    //   x: -1000,
-    //   duration: 0.5,
-    //   scrollTrigger: {
-    //     trigger: hero,
-    //     start: "top 80%",
-    //     end: "bottom 20%",
-    //     toggleActions: "play none none none",
-    //     preventOverlaps: true,
-    //   }
-    // });
-
     const target = document.querySelectorAll('.hero__title');
 
     for (let i = 0; i < target.length; i++) {
@@ -147,8 +148,8 @@
         opacity: 0,
         x: -100,
         duration: 0.5,
-        delay: 0.2,
-        stagger: { amount: 0.5 },
+        delay: 0.5,
+        stagger: { amount: 1 },
         scrollTrigger: {
           trigger: hero,
           start: "top 80%",
@@ -158,6 +159,42 @@
         },
       })
     }
+
+    const parallaxContainers = document.querySelectorAll('[data-animation="parallax"]');
+    parallaxContainers.forEach(parallaxContainer => {
+      gsap.fromTo(parallaxContainer, {
+        y: "-10%"
+      }, {
+        y: "10%",
+        scrollTrigger: {
+          trigger: parallaxContainer,
+          start: "top 60%",
+          end: "bottom top",
+          scrub: true
+        }
+      })
+    });
+
+
+
+    const items = document.querySelectorAll('.work__slide');
+    const itemsActive = document.getElementsByClassName('work__slide-active');
+
+    items.forEach(element => {
+      if (element !== items[0]) {
+        element.addEventListener('mouseover', function () {
+          if (itemsActive.length > 0 && itemsActive[0] !== this) {
+            itemsActive[0].classList.remove('work__slide-active');
+          }
+          this.classList.add('work__slide-active');
+
+        });
+        element.addEventListener('mouseout', function () {
+          items[0].classList.add('work__slide-active');
+          this.classList.remove('work__slide-active');
+        });
+      }
+    });
 
   });
 })();
