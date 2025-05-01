@@ -138,6 +138,57 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* libs styles */
+.swiper-pagination {
+  font-size: 1rem;
+  line-height: 1rem;
+}
+.swiper-pagination-bullet {
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--white);
+  border: 0.1rem solid var(--white);
+  transition: all 0.3s ease;
+  opacity: 1;
+}
+.swiper-pagination-bullet:hover {
+  background-color: var(--primary-black);
+}
+.swiper-pagination-bullet-active {
+  background-color: var(--primary-accent);
+  border-color: var(--primary-accent);
+}
+.swiper-button-prev, .swiper-button-next {
+  font-size: 4.4rem;
+  position: static;
+  margin: 0;
+  width: fit-content;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  color: var(--white);
+}
+.swiper-button-prev i, .swiper-button-next i {
+  color: inherit;
+}
+.swiper-button-prev:hover, .swiper-button-next:hover {
+  color: var(--primary-accent);
+}
+.swiper-button-prev:after, .swiper-button-next:after {
+  display: none;
+}
+.swiper-button-prev {
+  transform: scale(-1, 1);
+}
+.swiper-buttons {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 0.5rem;
+}
+
 html {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   -webkit-tap-highlight-color: transparent;
@@ -1035,31 +1086,37 @@ a {
   height: fit-content;
   overflow: hidden;
   position: relative;
-  background-color: var(--primary-black);
 }
-.hero__inner {
+.hero__item {
   display: flex;
   flex-direction: row;
+  position: relative;
 }
 .hero__content {
-  width: 50%;
   padding: 20rem 0 20rem 8rem;
+  overflow: visible;
   position: relative;
-  z-index: 20;
+  z-index: 30;
+  background-color: var(--primary-black);
+  clip-path: polygon(100% 0, 100% 0%, 57.26% 100%, 0 100%, 0 0);
+  width: 63.125%;
 }
-.hero__content h1 {
+.hero__title {
   margin-bottom: 4rem;
 }
-.hero__content p {
+.hero__text p {
   color: var(--white);
   margin-bottom: 5rem;
   max-width: 62rem;
 }
 .hero__img {
-  width: 50%;
-  min-height: 100%;
+  width: 63.85%;
+  height: 100%;
   object-fit: cover;
-  position: relative;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
   z-index: 8;
 }
 .hero .component-1 {
@@ -1071,7 +1128,7 @@ a {
   background-repeat: no-repeat;
   background-size: 100%;
   position: absolute;
-  bottom: 57%;
+  bottom: 51.4%;
   left: 50%;
   z-index: 12;
   transform: translateX(-50%);
@@ -1104,6 +1161,38 @@ a {
   z-index: 9;
   transform: translateX(-50%);
   mix-blend-mode: overlay;
+}
+.hero .component-4 {
+  display: block;
+  width: 123.1rem;
+  height: 214.3rem;
+  background-color: transparent;
+  background-image: url(./../images/tmp/rombs/rombs-fill-accent.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: absolute;
+  top: 48.6%;
+  left: 50%;
+  z-index: 11;
+  transform: translateX(-50%);
+}
+.hero__slider {
+  height: 100%;
+}
+.hero .swiper-pagination {
+  top: unset;
+  bottom: 6rem;
+  right: 8rem;
+  left: unset;
+  width: fit-content;
+  height: fit-content;
+}
+.hero .swiper-buttons {
+  position: absolute;
+  top: unset;
+  bottom: 6rem;
+  right: unset;
+  left: 8rem;
 }
 
 /* adaptive styles */

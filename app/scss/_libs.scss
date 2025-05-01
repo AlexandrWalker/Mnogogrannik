@@ -1,1 +1,70 @@
 /* libs styles */
+
+.swiper {
+
+  &-pagination {
+    font-size: 1rem;
+    line-height: 1rem;
+
+    &-bullet {
+      width: 1rem;
+      height: 1rem;
+      background-color: var(--white);
+      border: 0.1rem solid var(--white);
+      transition: all 0.3s ease;
+      opacity: 1;
+
+      &:hover {
+        background-color: var(--primary-black);
+      }
+
+      &-active {
+        background-color: var(--primary-accent);
+        border-color: var(--primary-accent);
+      }
+    }
+  }
+
+  &-button {
+
+    &-prev,
+    &-next {
+      font-size: 4.4rem;
+      position: static;
+      margin: 0;
+      width: fit-content;
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+      color: var(--white);
+
+      i {
+        color: inherit;
+      }
+
+      &:hover {
+        color: var(--primary-accent);
+      }
+
+      &:after {
+        display: none;
+      }
+    }
+
+    &-prev {
+      transform: scale(-1, 1);
+    }
+
+    &-next {}
+  }
+
+  &-buttons {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 0.5rem;
+}

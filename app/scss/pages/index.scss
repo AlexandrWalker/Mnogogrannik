@@ -3,25 +3,45 @@
   // min-height: 100vh;
   overflow: hidden;
   position: relative;
-  background-color: var(--primary-black);
+  // background-color: var(--primary-black);
 
-  &__inner {
+  &__inner {}
+
+  &__item {
     display: flex;
     flex-direction: row;
+    position: relative;
+
+    // &::before {
+    //   content: "";
+    //   display: block;
+    //   width: 40rem;
+    //   height: 60rem;
+    //   background-color: var(--primary-black);
+    //   transform: rotate(29.9deg);
+    //   position: absolute;
+    //   top: -20rem;
+    //   right: 41.6%;
+    //   // right: -16.2rem;
+    //   z-index: 30;
+    // }
   }
 
   &__content {
-    width: 50%;
     padding: 20rem 0 20rem 8rem;
+    overflow: visible;
     position: relative;
-    z-index: 20;
-    // background-color: var(--primary-black);
-    // clip-path: polygon(100% 0, 100% 43%, 68% 100%, 0 100%, 0 0);
+    z-index: 30;
+    background-color: var(--primary-black);
+    clip-path: polygon(100% 0, 100% 0%, 57.26% 100%, 0 100%, 0 0);
+    width: 63.125%;
+  }
 
-    h1 {
-      margin-bottom: 4rem;
-    }
+  &__title {
+    margin-bottom: 4rem;
+  }
 
+  &__text {
     p {
       color: var(--white);
       margin-bottom: 5rem;
@@ -30,10 +50,14 @@
   }
 
   &__img {
-    width: 50%;
-    min-height: 100%;
+    width: 63.85%;
+    // min-height: 100%;
+    height: 100%;
     object-fit: cover;
-    position: relative;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
     z-index: 8;
   }
 
@@ -46,7 +70,7 @@
     background-repeat: no-repeat;
     background-size: 100%;
     position: absolute;
-    bottom: 57%;
+    bottom: 51.4%;
     left: 50%;
     z-index: 12;
     transform: translateX(-50%);
@@ -81,5 +105,44 @@
     z-index: 9;
     transform: translateX(-50%);
     mix-blend-mode: overlay;
+  }
+
+  .component-4 {
+    display: block;
+    width: 123.1rem;
+    height: 214.3rem;
+    background-color: transparent;
+    background-image: url(./../images/tmp/rombs/rombs-fill-accent.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+    top: 48.6%;
+    left: 50%;
+    z-index: 11;
+    transform: translateX(-50%);
+  }
+
+  &__slider {
+    height: 100%;
+  }
+
+  .swiper {
+
+    &-pagination {
+      top: unset;
+      bottom: 6rem;
+      right: 8rem;
+      left: unset;
+      width: fit-content;
+      height: fit-content;
+    }
+
+    &-buttons {
+      position: absolute;
+      top: unset;
+      bottom: 6rem;
+      right: unset;
+      left: 8rem;
+    }
   }
 }
