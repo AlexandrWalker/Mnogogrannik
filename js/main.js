@@ -1,22 +1,55 @@
 (() => {
   document.addEventListener('DOMContentLoaded', () => {
 
-    // const header = document.getElementById('header');
-    // const scrollPrev = 0;
+    /**
+     * Инициализация слайдеров swiper
+     */
+    var heroSlider = new Swiper(".hero__slider", {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      centeredSlides: true,
+      loop: true,
+      speed: 500,
+      effect: "fade",
+      // autoplay: {
+      //   delay: 5000,
+      //   disableOnInteraction: false
+      // },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
 
-    // window.addEventListener('scroll', function () {
-    //   const scrolled = window.pageYOffset;
+    var work__items = new Swiper(".work__items", {
+      slidesPerView: 'auto',
+      slidesPerGroup: 1,
+      speed: 600,
+      breakpoints: {
+        600: {
+          slidesPerView: 6,
+        }
+      }
+    });
 
-    //   console.log(scrolled);
 
-    //   if (scrolled > 100 && scrolled > scrollPrev) {
-    //     header.classList.add('out');
-    //   } else {
-    //     header.classList.remove('out');
-    //   }
+    const header = document.getElementById('header');
+    const scrollPrev = 0;
 
-    //   scrollPrev = scrolled;
-    // });
+    window.addEventListener('scroll', function () {
+      const scrolled = window.pageYOffset;
+
+      if (scrolled > 100 && scrolled > scrollPrev) {
+        header.classList.add('out');
+      } else {
+        header.classList.remove('out');
+      }
+
+    });
 
     gsap.registerPlugin(ScrollTrigger);
 
@@ -38,16 +71,23 @@
     });
     gsap.ticker.lagSmoothing(0);
 
-    const component1 = document.querySelector(".component-1");
-    const component2 = document.querySelector(".component-2");
-    const component3 = document.querySelector(".component-3");
-    const hero = document.getElementById("hero");
+    const component1 = document.querySelector(".component--1");
+    const component2 = document.querySelector(".component--2");
+    const component3 = document.querySelector(".component--3");
+    const component4 = document.querySelector(".component--4");
 
-    gsap.from(component1, {
+    const component1Item = component1.querySelector(".component__item");
+    const component2Item = component2.querySelector(".component__item");
+    const component3Item = component3.querySelector(".component__item");
+    const component4Item = component4.querySelector(".component__item");
+
+    const hero = document.getElementById("hero");
+    const heroContent = document.querySelectorAll(".hero__content");
+
+    gsap.from(component1Item, {
       opacity: 1,
       y: -500,
-      duration: 0.5,
-      delay: 0.5,
+      duration: 0.6,
       scrollTrigger: {
         trigger: hero,
         start: "top 80%",
@@ -57,11 +97,11 @@
       }
     });
 
-    gsap.from(component2, {
+    gsap.from(component2Item, {
       opacity: 1,
       y: -1200,
       duration: 0.5,
-      // delay: 0.5,
+      delay: 0.6,
       scrollTrigger: {
         trigger: hero,
         start: "top 80%",
@@ -71,11 +111,11 @@
       }
     });
 
-    gsap.from(component3, {
+    gsap.from(component3Item, {
       opacity: 1,
       y: -1200,
       duration: 0.5,
-      // delay: 0.5,
+      delay: 0.6,
       scrollTrigger: {
         trigger: hero,
         start: "top 80%",
@@ -85,24 +125,76 @@
       }
     });
 
-    const target = document.querySelector('.hero__title');
-
-    const text = new SplitType(target, { types: 'lines, words' })
-
-    gsap.from(text.words, {
-      opacity: 0,
-      x: -50,
-      duration: 0.5,
-      delay: 0.2,
-      stagger: { amount: 0.2 },
+    gsap.from(component4Item, {
+      opacity: 1,
+      y: 1200,
+      duration: 0.6,
       scrollTrigger: {
         trigger: hero,
         start: "top 80%",
         end: "bottom 20%",
         toggleActions: "play none none none",
         preventOverlaps: true,
-      },
-    })
+      }
+    });
+
+    const target = document.querySelectorAll('.hero__title');
+
+    for (let i = 0; i < target.length; i++) {
+
+      const text = new SplitType(target[i], { types: 'lines, words' })
+
+      gsap.from(text.words, {
+        opacity: 0,
+        x: -100,
+        duration: 0.5,
+        delay: 0.5,
+        stagger: { amount: 1 },
+        scrollTrigger: {
+          trigger: hero,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none none",
+          preventOverlaps: true,
+        },
+      })
+    }
+
+    const parallaxContainers = document.querySelectorAll('[data-animation="parallax"]');
+    parallaxContainers.forEach(parallaxContainer => {
+      gsap.fromTo(parallaxContainer, {
+        y: "-10%"
+      }, {
+        y: "10%",
+        scrollTrigger: {
+          trigger: parallaxContainer,
+          start: "top 60%",
+          end: "bottom top",
+          scrub: true
+        }
+      })
+    });
+
+
+
+    const items = document.querySelectorAll('.work__slide');
+    const itemsActive = document.getElementsByClassName('work__slide-active');
+
+    items.forEach(element => {
+      if (element !== items[0]) {
+        element.addEventListener('mouseover', function () {
+          if (itemsActive.length > 0 && itemsActive[0] !== this) {
+            itemsActive[0].classList.remove('work__slide-active');
+          }
+          this.classList.add('work__slide-active');
+
+        });
+        element.addEventListener('mouseout', function () {
+          items[0].classList.add('work__slide-active');
+          this.classList.remove('work__slide-active');
+        });
+      }
+    });
 
   });
 })();
