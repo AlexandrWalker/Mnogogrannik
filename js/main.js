@@ -9,15 +9,33 @@
       spaceBetween: 0,
       centeredSlides: true,
       loop: true,
-      speed: 500,
+      speed: 600,
       effect: "fade",
-      // autoplay: {
-      //   delay: 5000,
-      //   disableOnInteraction: false
-      // },
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false
+      },
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+
+    var clientsSlider = new Swiper(".clients__slider", {
+      slidesPerView: 'auto',
+      spaceBetween: 10,
+      slidesPerGroup: 1,
+      speed: 600,
+      loop: true,
+      breakpoints: {
+        769: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        }
       },
       navigation: {
         nextEl: ".swiper-button-next",
@@ -50,6 +68,35 @@
       }
 
     });
+
+
+
+    /**
+     * Инициализация аккордеона
+     */
+    function accordionFunc() {
+      var accordionHead = document.querySelectorAll('.accordion'),
+        accordionActive = document.getElementsByClassName('active');
+
+      Array.from(accordionHead).forEach(function (accordionItem, i, accordionHead) {
+        accordionItem.addEventListener('click', function (e) {
+          // if (this.parentNode.dataset.skip) {
+          //   this.classList.toggle('active');
+          //   return;
+          // }
+          if (accordionActive.length > 0 && accordionActive[0] !== this) {
+            accordionActive[0].classList.remove('active');
+          }
+          this.classList.toggle('active');
+
+          ScrollTrigger.refresh();
+        });
+      });
+    }
+
+    accordionFunc();
+
+
 
     gsap.registerPlugin(ScrollTrigger);
 
@@ -160,41 +207,59 @@
       })
     }
 
-    const parallaxContainers = document.querySelectorAll('[data-animation="parallax"]');
-    parallaxContainers.forEach(parallaxContainer => {
-      gsap.fromTo(parallaxContainer, {
-        y: "-10%"
-      }, {
-        y: "10%",
-        scrollTrigger: {
-          trigger: parallaxContainer,
-          start: "top 60%",
-          end: "bottom top",
-          scrub: true
-        }
-      })
-    });
 
-
-
-    const items = document.querySelectorAll('.work__slide');
-    const itemsActive = document.getElementsByClassName('work__slide-active');
-
-    items.forEach(element => {
-      if (element !== items[0]) {
-        element.addEventListener('mouseover', function () {
-          if (itemsActive.length > 0 && itemsActive[0] !== this) {
-            itemsActive[0].classList.remove('work__slide-active');
-          }
-          this.classList.add('work__slide-active');
-
+    window.addEventListener('resize', function () {
+      if (this.window.innerWidth >= 769) {
+        const parallaxContainers = document.querySelectorAll('[data-animation="parallax"]');
+        parallaxContainers.forEach(parallaxContainer => {
+          gsap.fromTo(parallaxContainer, {
+            y: "-10%"
+          }, {
+            y: "10%",
+            scrollTrigger: {
+              trigger: parallaxContainer,
+              start: "top 60%",
+              end: "bottom top",
+              scrub: true
+            }
+          })
         });
-        element.addEventListener('mouseout', function () {
-          items[0].classList.add('work__slide-active');
-          this.classList.remove('work__slide-active');
-        });
+      } else {
+        return;
       }
-    });
+    }, true);
+
+
+
+    // const items = document.querySelectorAll('.work__slide');
+    // const itemsActive = document.getElementsByClassName('work__slide-active');
+
+    // items.forEach(element => {
+    //   if (element !== items[0]) {
+    //     element.addEventListener('mouseover', function () {
+    //       if (itemsActive.length > 0 && itemsActive[0] !== this) {
+    //         itemsActive[0].classList.remove('work__slide-active');
+    //       }
+    //       this.classList.add('work__slide-active');
+
+    //     });
+    //     element.addEventListener('mouseout', function () {
+    //       items[0].classList.add('work__slide-active');
+    //       this.classList.remove('work__slide-active');
+    //     });
+    //   }
+    // });
+
+
+
+    /**
+     * Инициализация Fancybox
+     */
+    if (document.querySelector('.fancybox')) {
+      Fancybox.bind('[data-fancybox="gallery"]', {
+        // Your custom options
+      });
+    }
 
   });
 })();

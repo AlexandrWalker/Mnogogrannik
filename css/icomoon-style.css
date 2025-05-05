@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'Mnogogrannik';
-  src:  url('./../fonts/icomoon/Mnogogrannik.eot?avv07i');
-  src:  url('./../fonts/icomoon/Mnogogrannik.eot?avv07i#iefix') format('embedded-opentype'),
-    url('./../fonts/icomoon/Mnogogrannik.ttf?avv07i') format('truetype'),
-    url('./../fonts/icomoon/Mnogogrannik.woff?avv07i') format('woff'),
-    url('./../fonts/icomoon/Mnogogrannik.svg?avv07i#Mnogogrannik') format('svg');
+  src:  url('./../fonts/icomoon/Mnogogrannik.eot?h2ng4t');
+  src:  url('./../fonts/icomoon/Mnogogrannik.eot?h2ng4t#iefix') format('embedded-opentype'),
+    url('./../fonts/icomoon/Mnogogrannik.ttf?h2ng4t') format('truetype'),
+    url('./../fonts/icomoon/Mnogogrannik.woff?h2ng4t') format('woff'),
+    url('./../fonts/icomoon/Mnogogrannik.svg?h2ng4t#Mnogogrannik') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -28,48 +28,51 @@
 .icon-arrow:before {
   content: "\e900";
 }
-.icon-arrow-stroke:before {
+.icon-arrow-long:before {
   content: "\e901";
 }
-.icon-chevron-down:before {
+.icon-arrow-stroke:before {
   content: "\e902";
 }
-.icon-chevron-fill:before {
+.icon-chevron-down:before {
   content: "\e903";
 }
-.icon-chevron-stroke:before {
+.icon-chevron-fill:before {
   content: "\e904";
 }
-.icon-download:before {
+.icon-chevron-stroke:before {
   content: "\e905";
 }
-.icon-link:before {
+.icon-download:before {
   content: "\e906";
 }
-.icon-mail:before {
+.icon-link:before {
   content: "\e907";
 }
-.icon-menu:before {
+.icon-mail:before {
   content: "\e908";
 }
-.icon-minus:before {
+.icon-menu:before {
   content: "\e909";
 }
-.icon-pdf:before {
+.icon-minus:before {
   content: "\e90a";
 }
-.icon-phone:before {
+.icon-pdf:before {
   content: "\e90b";
 }
-.icon-plus:before {
+.icon-phone:before {
   content: "\e90c";
 }
-.icon-telegram:before {
+.icon-plus:before {
   content: "\e90d";
 }
-.icon-user:before {
+.icon-telegram:before {
   content: "\e90e";
 }
-.icon-whatsapp:before {
+.icon-user:before {
   content: "\e90f";
+}
+.icon-whatsapp:before {
+  content: "\e910";
 }
