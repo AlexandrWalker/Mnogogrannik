@@ -59,6 +59,11 @@ section {
 }
 
 .section__head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 50%;
   margin-bottom: 5rem;
 }
 
