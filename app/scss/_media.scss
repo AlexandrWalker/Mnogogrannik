@@ -998,6 +998,10 @@
   .work .swiper-slide-active {
     width: 26.2rem !important;
   }
+
+  .work .swiper-slide-active .work__item-head::before {
+    background-color: var(--primary-accent);
+  }
 }
 
 @media (max-width: 520px) {}
