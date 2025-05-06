@@ -16,7 +16,12 @@ body {
   font-weight: 400;
   font-size: 2.4rem;
   color: var(--primary-black);
-  background: var(--primary-bg);
+  background-color: var(--primary-bg);
+
+  // background-image: url(./../images/tmp/main/bg.png);
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // background-position: top center;
 }
 
 section {
