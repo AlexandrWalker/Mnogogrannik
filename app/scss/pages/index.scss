@@ -3,7 +3,6 @@
   // min-height: 100vh;
   position: relative;
   background-color: var(--primary-black);
-  overflow: unset;
 
   &__inner {}
 
@@ -162,7 +161,8 @@
     width: 123.1rem;
     height: 214.3rem;
     position: absolute;
-    top: 45%;
+    // top: 45%;
+    top: 40.5rem;
     left: 50%;
     z-index: 14;
     transform: translateX(-50%);
@@ -323,6 +323,7 @@
 }
 
 .clients {
+  overflow: hidden;
 
   .section__head {
     margin-bottom: 0;
@@ -764,6 +765,7 @@
       gap: 3rem;
       padding: 4rem;
       background-color: var(--white);
+      width: 72.1rem;
 
       h6 {
         font-weight: 700;
@@ -1014,5 +1016,89 @@
       width: calc(100% - 26.2rem) !important;
       min-width: calc(100% - 26.2rem) !important;
     }
+  }
+}
+
+.request {
+  color: var(--white);
+
+  &__inner {
+    display: flex;
+    gap: 2.4rem;
+    background-color: var(--primary-accent);
+    padding: 6rem 30rem 4rem 14rem;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: -23rem;
+      z-index: 1;
+      border-left: 23rem solid transparent;
+      border-right: 23rem solid transparent;
+      border-bottom: 40rem solid var(--primary-black);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: -35.5rem;
+      z-index: 1;
+      border-left: 35.5rem solid transparent;
+      border-right: 35.5rem solid transparent;
+      border-top: 61.9rem solid var(--primary-black);
+    }
+  }
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    width: 100%;
+    z-index: 2;
+
+    &-title {
+      h6 {
+        font-weight: 700;
+        font-size: 8rem;
+        line-height: 100%;
+      }
+    }
+
+    &-text {
+      p {
+        font-weight: 400;
+        font-size: 2.4rem;
+        line-height: 100%;
+
+        p:not(:last-child) {
+          margin-bottom: 2.4rem;
+        }
+      }
+    }
+  }
+
+  &__body {
+    width: auto;
+    z-index: 2;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 57.1rem;
+  }
+
+  .planshet-block {
+    width: 61.1rem;
+    height: 106.3rem;
+    object-fit: cover;
+    position: absolute;
+    right: -25rem;
+    bottom: 19.7rem;
   }
 }

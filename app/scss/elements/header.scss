@@ -35,14 +35,14 @@
       i {
         font-size: 3.4rem;
         line-height: 100%;
-        color: var(--white);
+        color: var(--primary-accent);
         transition: all 0.3s ease;
       }
 
       &:hover {
 
         i {
-          color: var(--primary-accent);
+          color: var(--white);
         }
       }
     }

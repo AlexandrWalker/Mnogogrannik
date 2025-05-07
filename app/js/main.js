@@ -11,6 +11,9 @@
       loop: true,
       speed: 600,
       effect: "fade",
+      fadeEffect: {
+        crossFade: true
+      },
       autoplay: {
         delay: 5000,
         disableOnInteraction: false
@@ -59,9 +62,12 @@
       slidesPerGroup: 1,
       spaceBetween: 0,
       centeredSlides: true,
-      loop: true,
+      // loop: true,
       speed: 600,
       effect: "fade",
+      fadeEffect: {
+        crossFade: true
+      },
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
@@ -119,7 +125,7 @@
      */
     const lenis = new Lenis({
       anchors: {
-        offset: -150,
+        offset: -100,
         onComplete: () => {
           console.log('scrolled to anchor')
         }
@@ -221,6 +227,25 @@
       })
     }
 
+    const parallaxImgContainers = document.querySelectorAll('[data-animation="parallax-img"]');
+    parallaxImgContainers.forEach(parallaxImgContainer => {
+
+      const image = parallaxImgContainer.querySelector('img');
+
+      gsap.fromTo(image,
+        { y: '-5%' },
+        {
+          y: '5%',
+          scrollTrigger: {
+            trigger: parallaxImgContainer,
+            start: 'top 60%',
+            end: 'bottom top',
+            scrub: true
+          }
+        }
+      );
+    });
+
 
 
     window.addEventListener('resize', function () {
@@ -239,27 +264,6 @@
               scrub: true
             }
           })
-        });
-
-
-
-        const parallaxImgContainers = document.querySelectorAll('[data-animation="parallax-img"]');
-        parallaxImgContainers.forEach(parallaxImgContainer => {
-
-          const image = parallaxImgContainer.querySelector('img');
-
-          gsap.fromTo(image,
-            { y: '-5%' },
-            {
-              y: '5%',
-              scrollTrigger: {
-                trigger: parallaxImgContainer,
-                start: 'top 60%',
-                end: 'bottom top',
-                scrub: true
-              }
-            }
-          );
         });
       } else {
         return;
