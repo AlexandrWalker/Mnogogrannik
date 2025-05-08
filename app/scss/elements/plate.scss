@@ -1,3 +1,71 @@
-.plate {}
+.plate {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: var(--primary-black);
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(10rem);
+  transition: all 0.3s linear;
 
-.warning {}
+  &.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    transform: translateY(0);
+  }
+
+  &__inner {
+    padding: 0.7rem 2rem;
+  }
+
+  &__btn {
+    width: 100%;
+  }
+}
+
+.warning {
+  position: fixed;
+  bottom: 4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 200;
+  width: fit-content;
+  background-color: var(--primary-black);
+  margin: 0;
+  color: var(--white);
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.5rem 3rem;
+  }
+
+  &__text {
+    font-weight: 300;
+    font-size: 2.4rem;
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+
+      &:hover {
+        color: var(--primary-accent);
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__btn {
+    --button-font-size: 2.4rem;
+    font-weight: 400;
+    width: 6rem;
+    height: 6rem;
+    text-transform: unset;
+  }
+}

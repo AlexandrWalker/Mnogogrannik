@@ -171,3 +171,33 @@
     margin-left: auto;
   }
 }
+
+.innerPage {
+
+  .main {
+    padding-top: 4rem;
+  }
+
+  .header {
+    position: static;
+    background-color: var(--primary-black);
+
+    &__inner {
+      align-items: center;
+      padding: 2rem 0;
+    }
+
+    &__logo {
+      margin: 0;
+      width: 27.5rem;
+
+      &-img {
+        display: none;
+
+        &--min {
+          display: block;
+        }
+      }
+    }
+  }
+}

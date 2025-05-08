@@ -1,53 +1,59 @@
-<div class="modal" id="modal-callback">
+<div class="modal" id="modal-callback" data-lenis-prevent>
   <div class="modal__box">
     <button class="modal__close-btn">
     </button>
+    <div class="modal__head">
+      <h2 id="modal-title" class="modal__title">
+        Получите консультацию
+      </h2>
+      <p id="modal-text" class="modal__text">
+        Отправьте заявку и мы свяжемся с вами в ближайшее время
+      </p>
+    </div>
     <div class="modal__content">
-      <form class="form" action="#" method="post">
-        <div class="form__wrap">
-          <div class="form__head">
-            <h2 id="modal-title" class="modal__title block-title">
-              Хотите зарабатывать вместе с Империей?
-            </h2>
-            <p id="modal-text" class="modal__text">
-              оставьте заявку и наш менеджер свяжется с вами в ближайшее время
-            </p>
-          </div>
-          <div class="form__group">
-            <input class="form-input" type="text" placeholder="Ваше имя">
-            <i class="icon-user"></i>
-          </div>
-          <div class="form__group">
-            <input class="form-input" type="tel"
-              pattern="^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$"
-              maxlength="12" placeholder="Телефон">
-            <i class="icon-phone"></i>
-            <span class="error">
-              Произошла ошибка! Поле заполнено неверно
-            </span>
-          </div>
-          <div class="form__group">
-            <input class="form-input" type="email" pattern="^\S+@\S+\.\S+$" placeholder="Эл. почта" minlength="2"
-              maxlength="40">
-            <i class="icon-mail-form"></i>
-            <span class="error">
-              Произошла ошибка! Поле заполнено неверно
-            </span>
-          </div>
+      <form class="form" action="#" method="get">
+        <div class="form-group">
+          <input class="form-input" type="text" name="name" placeholder="Ваше имя*" tabindex="1" required>
+          <i class="icon-user"></i>
         </div>
-        <textarea class="form-textarea" placeholder="Комментарий "></textarea>
-        <div class="form__bottom">
-          <button class="btn btn-red" type="submit">
-            Получить консультацию
-          </button>
-          <div class="checkbox">
-            <input class="form-checkbox" type="checkbox" required>
-            <p class="checkbox__text">
-              Нажимая кнопку, вы даёте согласие на <a href="">обработку ваших персональных данных</a>
-            </p>
-          </div>
+        <div class="form-group">
+          <input class="form-input" type="tel" name="telephone" placeholder="Телефон*" tabindex="2"
+            pattern="^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$" maxlength="12"
+            required>
+          <i class="icon-phone"></i>
+        </div>
+        <div class="form-group">
+          <input class="form-input" type="email" name="pochta" placeholder="Эл. почта" tabindex="3"
+            pattern="^\S+@\S+\.\S+$" minlength="2" maxlength="40">
+          <i class="icon-mail"></i>
+        </div>
+        <textarea class="form-textarea" name="comments" id="" placeholder="Комментарий" tabindex="4"></textarea>
+        <button class="form-btn btn btn-black modal__btn" data-id="modal-success" type="submit" tabindex="7">
+          Отправить заявку
+        </button>
+        <div class="form-bottom">
+          <input class="form-checkbox" type="checkbox" tabindex="6" required>
+          <p class="form-text">
+            Нажимая кнопку «Рассчитать стоимость доставки», <a href="/">вы принимаете условия обработки
+              пользовательских данных</a>
+          </p>
         </div>
       </form>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="modal-success" data-lenis-prevent>
+  <div class="modal__box">
+    <button class="modal__close-btn">
+    </button>
+    <div class="modal__head">
+      <h2 id="modal-title" class="modal__title">
+        Ваше обращение отправлено!
+      </h2>
+      <p id="modal-text" class="modal__text">
+        В ближайшее время с вами свяжется наш менеджер для обсуждения вопроса
+      </p>
     </div>
   </div>
 </div>

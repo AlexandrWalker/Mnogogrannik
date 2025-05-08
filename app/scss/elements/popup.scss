@@ -14,40 +14,32 @@
   opacity: 0;
   transition: opacity .2s, visibility .2s;
 
-  &__title {
-    color: var(--primary-accent);
-    width: auto;
-  }
-
-  &__text {
-    max-width: 36.7rem;
-  }
-
-  &__list {
-    .header__contact-item {
-      padding: 0;
-    }
-  }
-
-  &__btn {
-    cursor: pointer;
-
-    i {
-      pointer-events: none;
-    }
-  }
-
-  &__content {
+  &__head {
     display: flex;
     flex-direction: column;
     gap: 2rem;
   }
 
+  &__title {
+    font-weight: 700;
+    font-size: 4.4rem;
+    line-height: 100%;
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 100%;
+  }
+
   &__box {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
     background-color: var(--white);
-    padding: 6rem 4rem 5rem 4rem;
+    padding: 3rem;
     position: relative;
-    max-width: 62.6rem;
+    max-width: 52.5rem;
     width: 90vw;
     height: fit-content;
     overflow: hidden;
@@ -65,19 +57,32 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 5rem;
-      height: 5rem;
-      border: none;
-      background-color: transparent;
-      position: absolute;
-      top: 2rem;
-      right: 2rem;
+      width: 3.4rem;
+      height: 3.4rem;
       cursor: pointer;
+      position: relative;
+      background: transparent;
+      margin: 0 0 0 auto;
+      flex-shrink: 0;
 
       &::before {
         content: "";
         display: block;
-        width: 3.6rem;
+        width: 2.6rem;
+        height: 0.2rem;
+        border-radius: 0.1rem;
+        background-color: var(--primary-black);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        transition: all 0.3s ease;
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        width: 2.6rem;
         height: 0.2rem;
         border-radius: 0.1rem;
         background-color: var(--primary-black);
@@ -85,20 +90,6 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%) rotate(-45deg);
-        transition: all 0.3s ease;
-      }
-
-      &::after {
-        content: "";
-        display: block;
-        width: 3.6rem;
-        height: 0.2rem;
-        border-radius: 0.1rem;
-        background-color: var(--primary-black);
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) rotate(-135deg);
         transition: all 0.3s ease;
       }
 
@@ -117,14 +108,7 @@
       transform: scale(1);
       max-height: 100%;
       height: fit-content;
-      overflow-y: scroll;
-    }
-  }
-
-  &#modal-social {
-    .modal__box {
-      padding: 3rem 2rem;
-      max-width: 42rem;
+      overflow-y: auto;
     }
   }
 
@@ -133,33 +117,21 @@
   }
 
   .form {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    width: 100%;
 
     &-textarea,
     &-input {
-      color: var(--primary-black-50);
-      border-color: var(--primary-black-50);
+      border-color: var(--primary-black-30);
 
       &::placeholder {
-        color: var(--primary-black-50);
+        color: var(--primary-black);
       }
 
       &:hover,
       &:focus,
       &:active {
-        color: var(--primary-black);
         border-color: var(--primary-black);
-
-        &::placeholder {
-          color: var(--primary-black);
-        }
-      }
-
-      &:invalid {
-        color: var(--primary-accent);
-        border-color: var(--primary-accent);
+        background: transparent;
       }
     }
 
@@ -171,6 +143,25 @@
         background-color: var(--primary-accent);
       }
     }
+
+    &-text {
+
+      a {
+        color: var(--primary-accent);
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+
+    &-btn {
+
+      &:hover {
+        --button-color: var(--white);
+        --button-bgcolor: var(--primary-accent);
+      }
+    }
   }
 
 
@@ -180,11 +171,5 @@
 
   .btn {
     width: 100%;
-
-    &:hover {
-      background-color: var(--primary-black);
-      border-color: var(--primary-black);
-      color: var(--white);
-    }
   }
 }

@@ -87,6 +87,11 @@
       }
     }
   }
+
+  .btn {
+    position: relative;
+    z-index: 1;
+  }
 }
 
 .component {
@@ -606,12 +611,13 @@
   &__title {
     margin-bottom: 2rem;
 
-    h3 {
+    h2 {
       font-weight: 700;
       font-size: 4.4rem;
       line-height: 100%;
       letter-spacing: 0.05em;
       text-transform: uppercase;
+      color: var(--white);
 
       span {
         color: var(--primary-accent);
@@ -882,6 +888,7 @@
     bottom: 7rem;
     left: 14rem;
     z-index: 3;
+    display: none;
   }
 
   .swiper-button-prev,
@@ -924,6 +931,7 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+      gap: 4.5rem;
       position: relative;
       height: 27.7rem;
 
@@ -1061,10 +1069,11 @@
     z-index: 2;
 
     &-title {
-      h6 {
+      h2 {
         font-weight: 700;
         font-size: 8rem;
         line-height: 100%;
+        color: var(--white);
       }
     }
 
@@ -1084,13 +1093,6 @@
   &__body {
     width: auto;
     z-index: 2;
-  }
-
-  &__form {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    width: 57.1rem;
   }
 
   .planshet-block {

@@ -62,7 +62,7 @@
       slidesPerGroup: 1,
       spaceBetween: 0,
       centeredSlides: true,
-      // loop: true,
+      loop: true,
       speed: 600,
       effect: "fade",
       fadeEffect: {
@@ -118,6 +118,126 @@
 
 
 
+    /**
+     * Управляет поведением меню-бургера.
+     */
+    function burgerNav() {
+      const burger = document.querySelector('.burger');
+      const menu = document.querySelector('.menu');
+      const closeButton = document.querySelector('.menu__close');
+      const overlay = document.querySelector('.menu__overlay');
+      const elements = document.querySelectorAll('.menu__list a');
+
+      /**
+       * Переключает видимость меню.
+       */
+      const toggleMenu = () => {
+        const isOpened = burger.classList.toggle('burger--opened');
+        menu.classList.toggle('menu--opened', isOpened);
+        lenis.stop();
+      };
+
+      /**
+       * Закрывает меню.
+       */
+      const closeMenu = () => {
+        burger.classList.remove('burger--opened');
+        menu.classList.remove('menu--opened');
+        lenis.start();
+      };
+
+      // Открытие/закрытие меню по клику на бургер
+      burger.addEventListener('click', toggleMenu);
+
+      // Закрытие меню по клику на кнопку закрытия или на overlay
+      [closeButton, overlay].forEach((element) => element.addEventListener('click', closeMenu));
+
+      // Закрытие меню при клике вне области меню и бургера
+      document.addEventListener('click', (event) => {
+        if (!menu.contains(event.target) && !burger.contains(event.target)) {
+          closeMenu();
+        }
+      });
+
+      document.querySelectorAll('.menu__list a').forEach((element) => element.addEventListener('click', closeMenu));
+    }
+
+    burgerNav();
+
+
+
+    /**
+     * Активация любого количества модальных окон
+     */
+    function modalFunc() {
+      var modal__btn = document.querySelector('.modal__btn');
+
+      if (!modal__btn) {
+        return;
+      } else {
+
+        var close = document.querySelectorAll('.modal__close-btn');
+        var openBtn = document.querySelectorAll('.modal__btn');
+
+        Array.from(openBtn, openButton => {
+          openButton.addEventListener('click', e => {
+
+            let open = document.getElementsByClassName('open');
+
+            if (open.length > 0 && open[0] !== this) {
+              open[0].classList.remove('open');
+            }
+
+            let modalId = e.target.getAttribute('data-id');
+            if (modalId) {
+              document.getElementById(modalId).classList.add('open');
+              document.body.classList.add('no-scroll');
+            } else {
+              return
+            }
+
+            let modalTitle = e.target.getAttribute('data-title');
+            if (modalTitle) {
+              document.getElementById("modal-title").innerHTML = modalTitle;
+            }
+
+            let modalText = e.target.getAttribute('data-text');
+            if (modalText) {
+              document.getElementById("modal-text").innerHTML = modalText;
+            }
+
+            Array.from(close, closeButton => {
+              closeButton.addEventListener('click', e => {
+                document.getElementById(modalId).classList.remove("open");
+                document.body.classList.remove('no-scroll');
+              });
+
+              window.addEventListener('keydown', (e) => {
+                if (e.key === "Escape") {
+                  document.getElementById(modalId).classList.remove("open")
+                  document.body.classList.remove('no-scroll');
+                }
+              });
+
+              document.querySelector(".modal.open .modal__box").addEventListener('click', event => {
+                event._isClickWithInModal = true;
+              });
+
+              document.getElementById(modalId).addEventListener('click', event => {
+                if (event._isClickWithInModal) return;
+                event.currentTarget.classList.remove('open');
+                document.body.classList.remove('no-scroll');
+              });
+            });
+          });
+        });
+      }
+    };
+
+    modalFunc();
+
+
+
     gsap.registerPlugin(ScrollTrigger);
 
     /**
@@ -138,72 +258,134 @@
     });
     gsap.ticker.lagSmoothing(0);
 
-    const component1 = document.querySelector(".component--1");
-    const component2 = document.querySelector(".component--2");
-    const component3 = document.querySelector(".component--3");
-    const component4 = document.querySelector(".component--4");
-
-    const component1Item = component1.querySelector(".component__item");
-    const component2Item = component2.querySelector(".component__item");
-    const component3Item = component3.querySelector(".component__item");
-    const component4Item = component4.querySelector(".component__item");
-
-    const hero = document.getElementById("hero");
-    const heroContent = document.querySelectorAll(".hero__content");
-
-    gsap.from(component1Item, {
-      opacity: 1,
-      y: -500,
-      duration: 0.6,
-      scrollTrigger: {
-        trigger: hero,
-        start: "top 80%",
-        end: "bottom 20%",
-        toggleActions: "play none none none",
-        preventOverlaps: true,
-      }
+    const titleWords = document.querySelectorAll('[data-splitting="words"]');
+    titleWords.forEach(titleWord => {
+      const titleWordInner = titleWord.querySelectorAll("h2");
+      const word = new SplitType(titleWordInner, { types: 'words, words' });
     });
 
-    gsap.from(component2Item, {
-      opacity: 1,
-      y: -1200,
-      duration: 0.5,
-      delay: 0.6,
-      scrollTrigger: {
-        trigger: hero,
-        start: "top 80%",
-        end: "bottom 20%",
-        toggleActions: "play none none none",
-        preventOverlaps: true,
-      }
+    const revealItems = document.querySelectorAll('[data-animation="reveal"]');
+    revealItems.forEach(revealItem => {
+      const word = revealItem.querySelectorAll("div.word");
+      const tl = gsap.timeline({
+        paused: true
+      });
+      tl.from(word, {
+        opacity: 0,
+        y: "10",
+        duration: .4,
+        ease: "power1.out",
+        stagger: {
+          amount: .6
+        },
+      });
+      scrollTriggerPlayer(revealItem, tl)
     });
 
-    gsap.from(component3Item, {
-      opacity: 1,
-      y: -1200,
-      duration: 0.5,
-      delay: 0.6,
-      scrollTrigger: {
-        trigger: hero,
-        start: "top 80%",
-        end: "bottom 20%",
-        toggleActions: "play none none none",
-        preventOverlaps: true,
-      }
+    const fadeInItems = document.querySelectorAll('[data-animation="fadeIn"]');
+    fadeInItems.forEach(fadeUpItem => {
+      const chars = fadeUpItem.querySelectorAll("div.word");
+      const tl = gsap.timeline({
+        paused: true
+      });
+      tl.from(chars, {
+        opacity: 0,
+        duration: .3,
+        ease: "power1.out",
+        stagger: {
+          amount: .8
+        }
+      });
+      scrollTriggerPlayer(fadeUpItem, tl)
     });
 
-    gsap.from(component4Item, {
-      opacity: 1,
-      y: 1200,
-      duration: 0.6,
-      scrollTrigger: {
-        trigger: hero,
-        start: "top 80%",
-        end: "bottom 20%",
-        toggleActions: "play none none none",
-        preventOverlaps: true,
-      }
+    const fadeUpItems = document.querySelectorAll('[data-animation="fadeUp"]');
+    fadeUpItems.forEach(fadeUpItem => {
+      const tl = gsap.timeline({
+        paused: true
+      });
+      tl.from(fadeUpItem, {
+        opacity: 0,
+        y: "80",
+        duration: .8,
+        ease: "power1.out",
+        stagger: {
+          amount: .8
+        }
+      });
+      scrollTriggerPlayer(fadeUpItem, tl)
     });
+
+    const component = document.querySelector(".component");
+    
+    if (component) {
+      const component1 = document.querySelector(".component--1");
+      const component2 = document.querySelector(".component--2");
+      const component3 = document.querySelector(".component--3");
+      const component4 = document.querySelector(".component--4");
+
+      const component1Item = component1.querySelector(".component__item");
+      const component2Item = component2.querySelector(".component__item");
+      const component3Item = component3.querySelector(".component__item");
+      const component4Item = component4.querySelector(".component__item");
+
+      const hero = document.querySelector(".hero");
+      const heroContent = document.querySelectorAll(".hero__content");
+
+      gsap.from(component1Item, {
+        opacity: 1,
+        y: -500,
+        duration: 0.6,
+        scrollTrigger: {
+          trigger: hero,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none none",
+          preventOverlaps: true,
+        }
+      });
+
+      gsap.from(component2Item, {
+        opacity: 1,
+        y: -1200,
+        duration: 0.5,
+        delay: 0.6,
+        scrollTrigger: {
+          trigger: hero,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none none",
+          preventOverlaps: true,
+        }
+      });
+
+      gsap.from(component3Item, {
+        opacity: 1,
+        y: -1200,
+        duration: 0.5,
+        delay: 0.6,
+        scrollTrigger: {
+          trigger: hero,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none none",
+          preventOverlaps: true,
+        }
+      });
+
+      gsap.from(component4Item, {
+        opacity: 1,
+        y: 1200,
+        duration: 0.6,
+        scrollTrigger: {
+          trigger: hero,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none none",
+          preventOverlaps: true,
+        }
+      });
+    }
 
     const target = document.querySelectorAll('.hero__title');
 
@@ -245,6 +427,22 @@
         }
       );
     });
+
+    function scrollTriggerPlayer(triggerElement, timeline, onEnterStart = "top 85%") {
+      ScrollTrigger.create({
+        trigger: triggerElement,
+        start: "top bottom",
+        onLeaveBack: () => {
+          timeline.progress(0);
+          timeline.pause()
+        }
+      });
+      ScrollTrigger.create({
+        trigger: triggerElement,
+        start: onEnterStart,
+        onEnter: () => timeline.play()
+      })
+    }
 
 
 
@@ -288,6 +486,39 @@
           items[0].classList.add('work__slide-active');
           this.classList.remove('work__slide-active');
         });
+      }
+    });
+
+
+
+    /**
+     * Кнопка куки
+     */
+    const warningBtn = document.getElementById('warning-btn');
+    if (warningBtn) {
+      warningBtn.addEventListener('click', event => {
+        document.getElementById('warning-plate').style.display = 'none';
+      });
+    }
+
+
+    /**
+     * Скрытие и появление плашки при скролле
+     */
+    const hFirstSection = document.getElementById('first-section');
+    const hFooter = document.getElementById('footer');
+    const h = hFirstSection.offsetHeight;
+    const plate = document.getElementById('plate');
+    const classToAdd = 'show';
+
+    window.addEventListener('scroll', function () {
+      const verticalScrollPosition = window.pageYOffset;
+      const bottomScrollPosition = document.body.offsetHeight - hFooter.offsetHeight - window.innerHeight;
+
+      if (verticalScrollPosition > h && verticalScrollPosition < bottomScrollPosition) {
+        plate.classList.add(classToAdd);
+      } else {
+        plate.classList.remove(classToAdd);
       }
     });
 

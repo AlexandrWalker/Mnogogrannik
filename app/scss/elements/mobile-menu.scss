@@ -3,19 +3,103 @@
   top: 0;
   bottom: 0;
   right: -100%;
-  padding: 5rem 11rem 6rem;
-  opacity: 0;
-  visibility: hidden;
+  z-index: 200;
+  // opacity: 0;
+  // visibility: hidden;
   pointer-events: none;
+  transition: all 0.3s ease;
+
+  &--opened {
+    right: 0;
+    // opacity: 1;
+    // visibility: visible;
+    pointer-events: all;
+
+    .menu__overlay {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 201;
+    transition: 0.3s;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  &__close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    background-color: var(--primary-accent);
+    flex-shrink: 0;
+    position: absolute;
+    top: 3rem;
+    right: 8rem;
+    z-index: 202;
+
+    span {
+      position: relative;
+
+      &::before {
+        content: "";
+        display: block;
+        width: 2.6rem;
+        height: 0.2rem;
+        border-radius: 0.1rem;
+        background-color: var(--white);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        width: 2.6rem;
+        height: 0.2rem;
+        border-radius: 0.1rem;
+        background-color: var(--white);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+    }
+  }
 
   &__inner {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 4rem;
+    background-color: var(--primary-bg);
+    padding: 5rem 22rem 8rem 14rem;
+    max-width: 110rem;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 202;
+    overflow-y: auto;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4OSIgaGVpZ2h0PSIyMjQzIiB2aWV3Qm94PSIwIDAgMTI4OSAyMjQzIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KICAgICAgPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik02NDQuNzUxIDIyNDNMODU5LjQ0NSAxODY5LjE4TDEwNzQuMzEgMTQ5NS4zMkwxMjg5IDExMjEuNUwxMDc0LjMxIDc0Ny42NzhMODU5LjU3OSAzNzMuODIyTDY0NC43NTEgLTIuODE2MWUtMDVMNjQ0LjQxNyAwLjU3MTQwNUw2NDQuMTE1IC0yLjgxODg4ZS0wNUw0MjkuMzg4IDM3My44MjJMMjE0LjY5NCA3NDcuNjc4TDMuNDE4MWUtMDUgMTEyMS41TDIxNC42OTQgMTQ5NS4zMkw0MjkuMzg4IDE4NjkuMThMNjQ0LjExNSAyMjQzTDY0NC40MTYgMjI0Mi40M0w2NDQuNzUxIDIyNDNaTTQyOS41MjIgMTEyMS41TDY0NC4yNDkgNzQ3LjY3OEw2NDQuNTUgNzQ3LjEwNkw2NDQuODg1IDc0Ny42NzhMODU5LjU3OSAxMTIxLjVMNjQ0Ljc1MSAxNDk1LjMyTDY0NC40MTYgMTQ5NS44OUw2NDQuMTE1IDE0OTUuMzJMNDI5LjUyMiAxMTIxLjVaIiBmaWxsPSJ3aGl0ZSIgZmlsbC1vcGFjaXR5PSIwLjMiLz4NCiAgICAgIDwvc3ZnPg0KICAgICAg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 9.8rem -8.3rem;
   }
 
   &__head {
-
+    z-index: 2;
   }
 
   &__list {
@@ -23,13 +107,13 @@
     li {
 
       &:not(:last-child) {
-        margin-bottom: 3rem;
+        margin-bottom: 4rem;
       }
     }
 
     a {
       font-weight: 700;
-      font-size: 2.4rem;
+      font-size: 3.4rem;
       line-height: 100%;
       text-transform: uppercase;
       color: inherit;
@@ -42,8 +126,58 @@
   }
 
   &__foot {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
+    z-index: 2;
+
+    &-inner {
+      display: flex;
+      flex-direction: row;
+      gap: 4.5rem;
+    }
   }
+
+  .footer__contact {
+    max-width: 40rem;
+    width: 100%;
+    color: var(--primary-accent);
+  }
+
+  .footer__items {
+    max-width: 28.6rem;
+    width: 100%;
+  }
+
+  .footer__contact-wrap span {
+    color: var(--primary-black);
+  }
+
+  .footer__item i {
+    color: var(--primary-black);
+  }
+
+  .footer__item:nth-child(1):hover i {
+    color: var(--primary-black);
+  }
+
+  .footer__item:nth-child(2) i {
+    color: var(--primary-accent);
+    background-color: var(--primary-black);
+  }
+
+  .footer__item:nth-child(2):hover i {
+    color: var(--primary-accent);
+    background-color: var(--white);
+  }
+
+  .footer__items a:hover i {
+    color: var(--primary-black);
+  }
+
+  .footer__items a:hover span {
+    color: var(--primary-accent);
+  }
+
+  .footer__contact-text a:hover {
+    color: var(--primary-black);
+  }
+
 }
