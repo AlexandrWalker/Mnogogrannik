@@ -387,6 +387,7 @@
       });
     }
 
+    const hero = document.querySelector(".hero");
     const target = document.querySelectorAll('.hero__title');
 
     for (let i = 0; i < target.length; i++) {
