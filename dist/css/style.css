@@ -3564,6 +3564,29 @@ a {
   .modal__box {
     padding: 4rem 1rem 3rem;
   }
+  /* privacy */
+  .privacy__inner {
+    gap: 1.5rem;
+  }
+  .privacy h1 {
+    font-size: 2.4rem;
+  }
+  .privacy__download {
+    margin-bottom: 0;
+  }
+  .privacy h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .privacy p {
+    font-size: 1.4rem;
+  }
+  .privacy p:not(:last-child) {
+    margin-bottom: 1.4rem;
+  }
+  .innerPage .main {
+    padding-top: 3rem;
+  }
 }
 @media (max-width: 480px) {
   /* products */

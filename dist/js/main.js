@@ -317,7 +317,7 @@
     });
 
     const component = document.querySelector(".component");
-    
+
     if (component) {
       const component1 = document.querySelector(".component--1");
       const component2 = document.querySelector(".component--2");
@@ -506,21 +506,24 @@
      * Скрытие и появление плашки при скролле
      */
     const hFirstSection = document.getElementById('first-section');
-    const hFooter = document.getElementById('footer');
-    const h = hFirstSection.offsetHeight;
-    const plate = document.getElementById('plate');
-    const classToAdd = 'show';
+    if (hFirstSection) {
+      const hFirstSection = document.getElementById('first-section');
+      const hFooter = document.getElementById('footer');
+      const h = hFirstSection.offsetHeight;
+      const plate = document.getElementById('plate');
+      const classToAdd = 'show';
 
-    window.addEventListener('scroll', function () {
-      const verticalScrollPosition = window.pageYOffset;
-      const bottomScrollPosition = document.body.offsetHeight - hFooter.offsetHeight - window.innerHeight;
+      window.addEventListener('scroll', function () {
+        const verticalScrollPosition = window.pageYOffset;
+        const bottomScrollPosition = document.body.offsetHeight - hFooter.offsetHeight - window.innerHeight;
 
-      if (verticalScrollPosition > h && verticalScrollPosition < bottomScrollPosition) {
-        plate.classList.add(classToAdd);
-      } else {
-        plate.classList.remove(classToAdd);
-      }
-    });
+        if (verticalScrollPosition > h && verticalScrollPosition < bottomScrollPosition) {
+          plate.classList.add(classToAdd);
+        } else {
+          plate.classList.remove(classToAdd);
+        }
+      });
+    }
 
 
 
