@@ -26,6 +26,10 @@
 
   &__title {
     margin-bottom: 4rem;
+
+    .word {
+      opacity: 0;
+    }
   }
 
   &__text {

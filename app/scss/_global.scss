@@ -17,9 +17,24 @@ body {
   font-size: 2.4rem;
   color: var(--primary-black);
   background-color: var(--primary-bg);
-  background-image: url(./../images/tmp/main/bg.png);
-  background-repeat: no-repeat;
-  background-size: 100% auto;
+  position: relative;
+  // background-image: url(./../images/tmp/main/bg.png);
+  // background-repeat: no-repeat;
+  // background-size: 100% auto;
+
+  &::before {
+    content: ' ';
+    width: 100%;
+    height: 100%;
+    background-image: url(./../images/tmp/main/bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    position: absolute;
+    left: 0;
+    top: 0;
+    will-change: transform;
+    z-index: 0;
+  }
 }
 
 .no-scroll {
@@ -73,6 +88,13 @@ section {
   align-items: flex-end;
   width: 50%;
   margin-bottom: 5rem;
+}
+
+[data-animation="reveal"] {
+
+  .word {
+    opacity: 0;
+  }
 }
 
 h1 {

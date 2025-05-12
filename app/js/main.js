@@ -264,18 +264,23 @@
     const revealItems = document.querySelectorAll('[data-animation="reveal"]');
     revealItems.forEach(revealItem => {
       const word = revealItem.querySelectorAll("div.word");
+
       const tl = gsap.timeline({
         paused: true
       });
       tl.from(word, {
-        opacity: 0,
+        // opacity: 0,
         y: "10",
         duration: .4,
         ease: "power1.out",
         stagger: {
           amount: .6
         },
-      });
+      }, 0).to(word, {
+        opacity: 1,
+        duration: 0.4,
+        stagger: { amount: .6 },
+      }, 0);
       scrollTriggerPlayer(revealItem, tl)
     });
 
@@ -390,9 +395,11 @@
     for (let i = 0; i < target.length; i++) {
 
       const text = new SplitType(target[i], { types: 'lines, words' })
-
-      gsap.from(text.words, {
-        opacity: 0,
+      const tl = gsap.timeline({
+        paused: true
+      });
+      tl.from(text.words, {
+        // opacity: 0,
         x: -100,
         duration: 0.5,
         delay: 0.5,
@@ -404,7 +411,19 @@
           toggleActions: "play none none none",
           preventOverlaps: true,
         },
-      })
+      }, 0).to(text.words, {
+        opacity: 1,
+        duration: 0.5,
+        delay: 0.5,
+        stagger: { amount: 1 },
+      }, 0);
+      scrollTriggerPlayer(target[i], tl)
+      // gsap.to(text.words, {
+      //   opacity: 1,
+      //   duration: 0.5,
+      //   delay: 0.5,
+      //   stagger: { amount: 1 },
+      // });
     }
 
     const parallaxImgContainers = document.querySelectorAll('[data-animation="parallax-img"]');
@@ -438,11 +457,11 @@
       ScrollTrigger.create({
         trigger: triggerElement,
         start: onEnterStart,
-        onEnter: () => timeline.play()
+        onEnter: () => timeline.play(0)
       })
     }
 
-    
+
 
     if (window.innerWidth >= 769) {
       asd()

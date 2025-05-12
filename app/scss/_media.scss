@@ -157,8 +157,8 @@
 @media (max-width: 991px) {}
 
 @media (max-width: 768px) {
-  body {
-    background-image: none;
+  body::before {
+    display: none;
   }
 
   section {
