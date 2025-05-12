@@ -1,9 +1,36 @@
 .header {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   left: 0;
   z-index: 100;
+  transition: all 0.2s linear;
+
+  &.hide {
+    transform: translateY(-100%);
+  }
+
+  &.out {
+    background-color: var(--primary-black);
+
+    .header__inner {
+      align-items: center;
+      padding: 2rem 0;
+    }
+
+    .header__logo {
+      margin: 0;
+      width: 27.5rem;
+
+      &-img {
+        display: none;
+
+        &--min {
+          display: block;
+        }
+      }
+    }
+  }
 
   &__inner {
     display: grid;
@@ -152,6 +179,7 @@
   &__logo {
     width: 15.2rem;
     margin-top: -1rem;
+    transition: unset;
 
     &-img {
       width: 100%;

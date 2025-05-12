@@ -3,9 +3,21 @@
   &__inner {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
     max-width: 117rem;
     width: 100%;
+  }
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
   }
 
   h1 {
@@ -32,6 +44,11 @@
     &:hover {
       text-decoration-line: none;
 
+      i {
+        background-color: var(--white);
+        color: var(--primary-accent);
+      }
+
       span {
         text-decoration-line: underline;
       }
@@ -45,7 +62,7 @@
       height: 4rem;
       flex-shrink: 0;
       background-color: var(--primary-accent);
-      font-size: 2.4rem;
+      font-size: 2.2rem;
       color: var(--white);
     }
 
@@ -74,7 +91,7 @@
   }
 
   p:not(:last-child) {
-    margin-bottom: 1.6rem;
+    margin-bottom: 2rem;
   }
 
   a {
@@ -87,5 +104,32 @@
 
   strong {
     font-weight: 700;
+    font-size: inherit;
+  }
+
+  ul {
+    padding: 0 0 0 2.4rem;
+  }
+
+  li {
+    position: relative;
+    margin-bottom: 2rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+
+    &::before {
+      content: "";
+      display: block;
+      width: 0.44rem;
+      height: 0.44rem;
+      background-color: var(--primary-black);
+      border-radius: 0.22rem;
+      position: absolute;
+      top: 1rem;
+      left: -1.4rem;
+    }
   }
 }

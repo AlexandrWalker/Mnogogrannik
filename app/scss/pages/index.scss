@@ -994,6 +994,11 @@
     width: calc((100% - 65.1rem) / 4) !important;
     height: auto;
     transition: all 0.5s ease;
+    margin-right: 0.1rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
 
     &.work__slide-active {
       width: 65.1rem !important;
