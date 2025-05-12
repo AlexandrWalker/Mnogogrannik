@@ -4,90 +4,87 @@
     /**
      * Инициализация слайдеров swiper
      */
-    var heroSlider = new Swiper(".hero__slider", {
-      slidesPerView: 1,
-      spaceBetween: 0,
-      centeredSlides: true,
-      loop: true,
-      speed: 600,
-      effect: "fade",
-      fadeEffect: {
-        crossFade: true
-      },
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
+    const hero__slider = document.querySelector('.hero__slider');
+    if (hero__slider) {
+      var heroSlider = new Swiper(hero__slider, {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        centeredSlides: true,
+        loop: true,
+        speed: 600,
+        effect: "fade",
+        fadeEffect: {
+          crossFade: true
+        },
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    }
 
-    var clientsSlider = new Swiper(".clients__slider", {
-      slidesPerView: 'auto',
-      spaceBetween: 10,
-      slidesPerGroup: 1,
-      speed: 600,
-      loop: true,
-      breakpoints: {
-        769: {
-          slidesPerView: 3,
-          spaceBetween: 20,
+    const clients__slider = document.querySelector('.clients__slider');
+    if (clients__slider) {
+      var clientsSlider = new Swiper(clients__slider, {
+        slidesPerView: 'auto',
+        spaceBetween: 10,
+        slidesPerGroup: 1,
+        speed: 600,
+        loop: true,
+        breakpoints: {
+          769: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          }
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    }
+
+    const work__items = document.querySelector('.work__items');
+    if (work__items) {
+      var workItems = new Swiper(work__items, {
+        slidesPerView: 'auto',
+        slidesPerGroup: 1,
+        speed: 600,
+        breakpoints: {
+          600: {
+            slidesPerView: 6,
+          }
         }
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
+      });
+    }
 
-    var work__items = new Swiper(".work__items", {
-      slidesPerView: 'auto',
-      slidesPerGroup: 1,
-      speed: 600,
-      breakpoints: {
-        600: {
-          slidesPerView: 6,
-        }
-      }
-    });
-
-    var missionSlider = new Swiper(".mission__slider", {
-      slidesPerView: 1,
-      slidesPerGroup: 1,
-      spaceBetween: 0,
-      centeredSlides: true,
-      loop: true,
-      speed: 600,
-      effect: "fade",
-      fadeEffect: {
-        crossFade: true
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
-
-
-    const header = document.getElementById('header');
-    const scrollPrev = 0;
-
-    window.addEventListener('scroll', function () {
-      const scrolled = window.pageYOffset;
-
-      if (scrolled > 100 && scrolled > scrollPrev) {
-        header.classList.add('out');
-      } else {
-        header.classList.remove('out');
-      }
-
-    });
+    const mission__slider = document.querySelector('.mission__slider');
+    if (mission__slider) {
+      var missionSlider = new Swiper(mission__slider, {
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+        spaceBetween: 0,
+        centeredSlides: true,
+        loop: true,
+        speed: 600,
+        effect: "fade",
+        fadeEffect: {
+          crossFade: true
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    }
 
 
 
@@ -445,29 +442,40 @@
       })
     }
 
+    
 
+    if (window.innerWidth >= 769) {
+      asd()
+    } else {
+      return;
+    }
 
     window.addEventListener('resize', function () {
       if (window.innerWidth >= 769) {
-        const parallaxContainers = document.querySelectorAll('[data-animation="parallax"]');
-
-        parallaxContainers.forEach(parallaxContainer => {
-          gsap.fromTo(parallaxContainer, {
-            y: "-5%"
-          }, {
-            y: "5%",
-            scrollTrigger: {
-              trigger: parallaxContainer,
-              start: "top 60%",
-              end: "bottom top",
-              scrub: true
-            }
-          })
-        });
+        asd()
       } else {
         return;
       }
     }, true);
+
+    function asd() {
+
+      const parallaxContainers = document.querySelectorAll('[data-animation="parallax"]');
+
+      parallaxContainers.forEach(parallaxContainer => {
+        gsap.fromTo(parallaxContainer, {
+          y: "0%"
+        }, {
+          y: "10%",
+          scrollTrigger: {
+            trigger: parallaxContainer,
+            start: "top 60%",
+            end: "bottom top",
+            scrub: true
+          }
+        })
+      });
+    }
 
 
 
@@ -525,6 +533,45 @@
         }
       });
     }
+
+
+
+    /**
+     * Скрытие шапки при скролле вниз и появление при скролле вверх.
+     * Добавление класса out для смены стиля шапки при скролле.
+     */
+    function headerFunc() {
+      let lastScroll = 0;
+      const defaultOffset = 0;
+      const header = document.querySelector('.header');
+
+      const scrollPosition = () => window.pageYOffset || document.documentElement.scrollTop;
+      const containHide = () => header.classList.contains('hide');
+
+      window.addEventListener('scroll', () => {
+        if (scrollPosition() > lastScroll && !containHide() && scrollPosition() > defaultOffset) {
+          //scroll down
+          header.classList.add('hide');
+        }
+        else if (scrollPosition() < lastScroll && containHide()) {
+          //scroll up
+          header.classList.remove('hide');
+        }
+
+        lastScroll = scrollPosition();
+      })
+
+      window.addEventListener('scroll', () => {
+        if (scrollPosition() > 0) {
+          header.classList.add('out');
+        }
+        else {
+          header.classList.remove('out');
+        }
+      })
+    }
+
+    headerFunc();
 
 
 
