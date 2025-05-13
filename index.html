@@ -11,7 +11,7 @@
   <meta name="format-detection" content="address=no">
   <meta name="format-detection" content="email=no">
   <!-- favicon -->
-  <link rel="icon" type="image/png" href="./../images/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/png" href="./images/favicon/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="./images/favicon/favicon.svg" />
   <link rel="shortcut icon" href="./images/favicon/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png" />
@@ -25,8 +25,8 @@
   <link rel="stylesheet" href="./libs/fancybox/jquery.fancybox.min.css" />
   <link rel="stylesheet" href="./libs/splitting/splitting.css">
   <link rel="stylesheet" href="./libs/splitting/splitting-cells.css">
-  
-  <link rel="stylesheet" href="./css/style.css?v=1">
+
+  <link rel="stylesheet" href="./css/style.css?v=2">
 </head>
 
 <body>
@@ -213,12 +213,12 @@
                 <div class="swiper-slide">
                   <div class="hero__item">
                     <div class="hero__content">
-                      <div class="hero__title" data-splitting="words">
+                      <div class="hero__title" data-animation="reveal" data-splitting="words">
                         <h1>
                           Комплексное снабжение <span>предприятий</span>
                         </h1>
                       </div>
-                      <div class="hero__text" data-splitting="words">
+                      <div class="hero__text">
                         <p>
                           Берём на себя все вопросы по поставкам, оптимизируем затраты и упрощаем процесс закупок.
                         </p>
@@ -238,7 +238,7 @@
                 <div class="swiper-slide">
                   <div class="hero__item">
                     <div class="hero__content">
-                      <div class="hero__title">
+                      <div class="hero__title" data-animation="reveal" data-splitting="words">
                         <h1>
                           Lorem ipsum dolor <br> <span>sit amet</span>
                         </h1>
@@ -770,7 +770,7 @@
                 <div class="component component--5">
                   <span class="component__item"></span>
                 </div>
-                <div class="quiz__title" data-animation="reveal" data-splitting="words">
+                <div class="quiz__title">
                   <h2>
                     Уникальное торговое предложение <span>(квиЗ)</span>
                   </h2>
@@ -1094,7 +1094,10 @@
                     pattern="^\S+@\S+\.\S+$" minlength="2" maxlength="40">
                   <i class="icon-mail"></i>
                 </div>
-                <textarea class="form-textarea" name="comments" id="" placeholder="Комментарий" tabindex="4"></textarea>
+                <div class="form-group">
+                  <textarea class="form-textarea" name="comments" id="" placeholder="Комментарий"
+                    tabindex="4"></textarea>
+                </div>
                 <div class="form-group">
                   <input class="form-file-input" id="form-file" type="file" tabindex="5">
                   <label class="form-file" for="form-file">
@@ -1108,7 +1111,8 @@
                 <div class="form-bottom">
                   <input class="form-checkbox" type="checkbox" tabindex="6" required>
                   <p class="form-text">
-                    Нажимая кнопку «Рассчитать стоимость доставки», <a href="/">вы принимаете условия обработки
+                    Нажимая кнопку «Рассчитать стоимость доставки», <a href="/Mnogogrannik/privacy.html">вы принимаете
+                      условия обработки
                       пользовательских данных</a>
                   </p>
                 </div>
@@ -1265,14 +1269,16 @@
                 pattern="^\S+@\S+\.\S+$" minlength="2" maxlength="40">
               <i class="icon-mail"></i>
             </div>
-            <textarea class="form-textarea" name="comments" id="" placeholder="Комментарий" tabindex="4"></textarea>
+            <div class="form-group">
+              <textarea class="form-textarea" name="comments" id="" placeholder="Комментарий" tabindex="4"></textarea>
+            </div>
             <button class="form-btn btn btn-black modal__btn" data-id="modal-success" type="submit" tabindex="7">
               Отправить заявку
             </button>
             <div class="form-bottom">
               <input class="form-checkbox" type="checkbox" tabindex="6" required>
               <p class="form-text">
-                Нажимая кнопку «Рассчитать стоимость доставки», <a href="/">вы принимаете условия обработки
+                Нажимая кнопку «Рассчитать стоимость доставки», <a href="/Mnogogrannik/privacy.html">вы принимаете условия обработки
                   пользовательских данных</a>
               </p>
             </div>
@@ -1329,7 +1335,7 @@
     <script src="./libs/splitting/splitting.js"></script>
     <script src="./libs/splitting/split-type.js"></script>
     
-    <script src="./js/main.js?v=1"></script>
+    <script src="./js/main.js?v=2"></script>
     </body>
     
     </html>

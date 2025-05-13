@@ -254,66 +254,53 @@
 
     const titleWords = document.querySelectorAll('[data-splitting="words"]');
     titleWords.forEach(titleWord => {
-      const titleWordInner = titleWord.querySelectorAll("h2");
-      const word = new SplitType(titleWordInner, { types: 'words, words' });
+      const title1WordInner = titleWord.querySelectorAll("h1");
+      const title2WordInner = titleWord.querySelectorAll("h2");
+      const word = new SplitType(title1WordInner, { types: 'words, words' });
+      const word1 = new SplitType(title2WordInner, { types: 'words, words' });
     });
 
-    const revealItems = document.querySelectorAll('[data-animation="reveal"]');
-    revealItems.forEach(revealItem => {
-      const word = revealItem.querySelectorAll("div.word");
+    // const revealItems = document.querySelectorAll('[data-animation="reveal"]');
+    // revealItems.forEach(revealItem => {
+    //   const word = revealItem.querySelectorAll("div.word");
 
-      const tl = gsap.timeline({
-        paused: true
-      });
-      tl.from(word, {
-        // opacity: 0,
-        y: "10",
-        duration: .4,
-        ease: "power1.out",
-        stagger: {
-          amount: .6
-        },
-      }, 0).to(word, {
-        opacity: 1,
-        duration: 0.4,
-        stagger: { amount: .6 },
-      }, 0);
-      scrollTriggerPlayer(revealItem, tl)
-    });
+    //   const tl = gsap.timeline({
+    //     paused: true
+    //   });
+    //   tl.from(word, {
+    //     // opacity: 0,
+    //     y: "10",
+    //     duration: .4,
+    //     ease: "power1.out",
+    //     stagger: {
+    //       amount: .6
+    //     },
+    //   }, 0).to(word, {
+    //     opacity: 1,
+    //     duration: 0.4,
+    //     stagger: { amount: .6 },
+    //   }, 0);
+    //   scrollTriggerPlayer(revealItem, tl)
+    // });
 
-    const fadeInItems = document.querySelectorAll('[data-animation="fadeIn"]');
-    fadeInItems.forEach(fadeUpItem => {
-      const chars = fadeUpItem.querySelectorAll("div.word");
-      const tl = gsap.timeline({
-        paused: true
-      });
-      tl.from(chars, {
-        opacity: 0,
-        duration: .3,
-        ease: "power1.out",
-        stagger: {
-          amount: .8
-        }
-      });
-      scrollTriggerPlayer(fadeUpItem, tl)
-    });
+    // const fadeUpItems = document.querySelectorAll('[data-animation="fadeUp"]');
+    // fadeUpItems.forEach(fadeUpItem => {
+    //   const tl = gsap.timeline({
+    //     paused: true
+    //   });
+    //   tl.from(fadeUpItem, {
+    //     opacity: 0,
+    //     y: "80",
+    //     duration: .8,
+    //     ease: "power1.out",
+    //     stagger: {
+    //       amount: .8
+    //     }
+    //   });
+    //   scrollTriggerPlayer(fadeUpItem, tl)
+    // });
 
-    const fadeUpItems = document.querySelectorAll('[data-animation="fadeUp"]');
-    fadeUpItems.forEach(fadeUpItem => {
-      const tl = gsap.timeline({
-        paused: true
-      });
-      tl.from(fadeUpItem, {
-        opacity: 0,
-        y: "80",
-        duration: .8,
-        ease: "power1.out",
-        stagger: {
-          amount: .8
-        }
-      });
-      scrollTriggerPlayer(fadeUpItem, tl)
-    });
+
 
     const component = document.querySelector(".component");
 
@@ -387,41 +374,71 @@
     }
 
     const hero = document.querySelector(".hero");
-    const target = document.querySelectorAll('.hero__title');
+    // const target = document.querySelectorAll('.hero__title');
 
-    for (let i = 0; i < target.length; i++) {
+    // for (let i = 0; i < target.length; i++) {
 
-      const text = new SplitType(target[i], { types: 'lines, words' })
-      const tl = gsap.timeline({
-        paused: true
-      });
-      tl.from(text.words, {
-        // opacity: 0,
-        x: -100,
-        duration: 0.5,
-        delay: 0.5,
-        stagger: { amount: 1 },
-        scrollTrigger: {
-          trigger: hero,
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none none",
-          preventOverlaps: true,
-        },
-      }, 0).to(text.words, {
-        opacity: 1,
-        duration: 0.5,
-        delay: 0.5,
-        stagger: { amount: 1 },
-      }, 0);
-      scrollTriggerPlayer(target[i], tl)
-      // gsap.to(text.words, {
-      //   opacity: 1,
-      //   duration: 0.5,
-      //   delay: 0.5,
-      //   stagger: { amount: 1 },
-      // });
-    }
+    //   const text = new SplitType(target[i], { types: 'lines, words' })
+    //   const tl = gsap.timeline({
+    //     paused: true
+    //   });
+    //   tl.from(text.words, {
+    //     // opacity: 0,
+    //     x: -100,
+    //     duration: 0.5,
+    //     // delay: 0.5,
+    //     stagger: { amount: 0.6 },
+    //     scrollTrigger: {
+    //       trigger: hero,
+    //       start: "top 80%",
+    //       end: "bottom 20%",
+    //       toggleActions: "play none none none",
+    //       preventOverlaps: true,
+    //     },
+    //   }, 0).to(text.words, {
+    //     opacity: 1,
+    //     duration: 0.5,
+    //     // delay: 0.5,
+    //     stagger: { amount: 0.6 },
+    //   }, 0);
+    //   scrollTriggerPlayer(target[i], tl)
+    //   // gsap.to(text.words, {
+    //   //   opacity: 1,
+    //   //   duration: 0.5,
+    //   //   delay: 0.5,
+    //   //   stagger: { amount: 1 },
+    //   // });
+    // }
+
+
+
+    // текст снизу вверх из прозрачности
+    const revealItems = document.querySelectorAll('[data-animation="reveal"]')
+
+    revealItems.forEach((revealItem) => {
+
+      const words = revealItem.querySelectorAll('div.word');
+      const tl = gsap.timeline({ paused: true });
+
+      tl.fromTo(words,
+        { opacity: 0, y: 80 },
+        { opacity: 1, y: 0, duration: 0.4, ease: 'power1.out', stagger: { amount: 0.6 } }
+      );
+
+      scrollTriggerPlayer(revealItem, tl);
+    });
+
+    // блоки снизу вверх из прозрачности
+    const fadeUpItems = document.querySelectorAll('[data-animation="fadeUp"]')
+
+    fadeUpItems.forEach((fadeUpItem) => {
+
+      const tl = gsap.timeline({ paused: true });
+
+      tl.from(fadeUpItem, { opacity: 0, y: '80', duration: .8, ease: 'power1.out', stagger: { amount: 0.8 } });
+
+      scrollTriggerPlayer(fadeUpItem, tl);
+    });
 
     function scrollTriggerPlayer(triggerElement, timeline, onEnterStart = "top 85%") {
       ScrollTrigger.create({
@@ -557,29 +574,39 @@
       let lastScroll = 0;
       const defaultOffset = 0;
       const header = document.querySelector('.header');
+      const hero = document.querySelector('.hero');
 
       const scrollPosition = () => window.pageYOffset || document.documentElement.scrollTop;
       const containHide = () => header.classList.contains('hide');
 
-      window.addEventListener('scroll', () => {
-        if (scrollPosition() > lastScroll && !containHide() && scrollPosition() > defaultOffset) {
-          //scroll down
-          header.classList.add('hide');
-        }
-        else if (scrollPosition() < lastScroll && containHide()) {
-          //scroll up
-          header.classList.remove('hide');
-        }
+      // window.addEventListener('scroll', () => {
+      //   if (scrollPosition() > lastScroll && !containHide() && scrollPosition() > defaultOffset) {
+      //     //scroll down
+      //     header.classList.add('hide');
+      //   }
+      //   else if (scrollPosition() < lastScroll && containHide()) {
+      //     //scroll up
+      //     header.classList.remove('hide');
+      //   }
 
-        lastScroll = scrollPosition();
-      })
+      //   lastScroll = scrollPosition();
+      // })
 
       window.addEventListener('scroll', () => {
-        if (scrollPosition() > 0) {
-          header.classList.add('out');
-        }
-        else {
-          header.classList.remove('out');
+        if (hero) {
+          if (scrollPosition() > hero.offsetHeight) {
+            header.classList.add('out');
+          }
+          else {
+            header.classList.remove('out');
+          }
+        } else {
+          if (scrollPosition() > 0) {
+            header.classList.add('out');
+          }
+          else {
+            header.classList.remove('out');
+          }
         }
       })
     }
