@@ -22,18 +22,21 @@ body {
   // background-repeat: no-repeat;
   // background-size: 100% auto;
 
-  &::before {
-    content: ' ';
-    width: 100%;
-    height: 100%;
-    background-image: url(./../images/tmp/main/bg.png);
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    position: absolute;
-    left: 0;
-    top: 0;
-    will-change: transform;
-    z-index: 0;
+  &:not(.innerPage) {
+
+    &::before {
+      content: ' ';
+      width: 100%;
+      height: 100%;
+      background-image: url(./../images/tmp/main/bg.png);
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+      position: absolute;
+      left: 0;
+      top: 0;
+      will-change: transform;
+      z-index: 0;
+    }
   }
 }
 
@@ -528,5 +531,25 @@ a {
   100% {
     transform: scale(1);
     opacity: 1;
+  }
+}
+
+.main {
+
+  &__prolog {
+    margin-bottom: 3rem;
+
+    h1 {
+      font-weight: 700;
+      font-size: 4.4rem;
+      text-transform: uppercase;
+      color: var(--primary-black);
+    }
+  }
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
   }
 }

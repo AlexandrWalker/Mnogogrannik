@@ -221,7 +221,7 @@ body {
   background-color: var(--primary-bg);
   position: relative;
 }
-body::before {
+body:not(.innerPage)::before {
   content: " ";
   width: 100%;
   height: 100%;
@@ -660,6 +660,21 @@ a {
     opacity: 1;
   }
 }
+.main__prolog {
+  margin-bottom: 3rem;
+}
+.main__prolog h1 {
+  font-weight: 700;
+  font-size: 4.4rem;
+  text-transform: uppercase;
+  color: var(--primary-black);
+}
+.main__head {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
 /* component styles */
 /* dropdown */
 .dropdown {
@@ -1450,6 +1465,7 @@ a {
 .modal .form-textarea:hover, .modal .form-textarea:focus, .modal .form-textarea:active, .modal .form-input:hover, .modal .form-input:focus, .modal .form-input:active {
   border-color: var(--primary-black);
   background: transparent;
+  color: var(--primary-black);
 }
 .modal .form-checkbox {
   border-color: var(--primary-black);
@@ -2403,27 +2419,8 @@ a {
 }
 
 .privacy__inner {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
   max-width: 117rem;
   width: 100%;
-}
-.privacy__head {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-.privacy__body {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-.privacy h1 {
-  font-weight: 700;
-  font-size: 4.4rem;
-  text-transform: uppercase;
-  color: var(--primary-black);
 }
 .privacy a.privacy__download:hover {
   text-decoration: none;
@@ -3667,12 +3664,6 @@ a {
     padding: 4rem 1rem 3rem;
   }
   /* privacy */
-  .privacy__inner {
-    gap: 2rem;
-  }
-  .privacy__body {
-    gap: 1.5rem;
-  }
   .privacy h1 {
     font-size: 2.4rem;
   }
