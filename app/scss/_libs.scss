@@ -60,7 +60,11 @@
   &-buttons {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    // gap: 2rem;
+
+    .swiper-button-next {
+      margin-left: 2rem;
+    }
 
     i {
       line-height: 1rem;

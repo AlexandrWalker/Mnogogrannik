@@ -93,12 +93,12 @@ section {
   margin-bottom: 5rem;
 }
 
-[data-animation="reveal"] {
+// [data-animation="reveal"] {
 
-  .word {
-    opacity: 0;
-  }
-}
+//   .word {
+//     opacity: 0;
+//   }
+// }
 
 h1 {
   font-weight: 700;
@@ -210,7 +210,6 @@ a {
 .link {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1;
@@ -225,6 +224,7 @@ a {
     line-height: 1;
     color: var(--primary-accent);
     transition: all 0.3s ease;
+    margin-right: 0.5rem;
   }
 
   &:hover {
@@ -237,10 +237,12 @@ a {
 }
 
 .burger {
-  gap: 0.5rem;
+  // gap: 0.5rem;
+  margin-left: 2rem;
 
   i {
     font-size: 2.4rem;
+    margin-left: 0.5rem;
   }
 }
 
@@ -253,37 +255,16 @@ a {
   color: var(--primary-accent);
 }
 
-.checkbox {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-
-  &__text {
-    font-weight: 400;
-    font-size: 1.4rem;
-    line-height: 1;
-    color: var(--white);
-
-    a {
-      color: inherit;
-      text-decoration: underline;
-
-      &:hover {
-        color: var(--primary-black);
-      }
-    }
-  }
-}
-
 .form {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  // gap: 2rem;
   width: 57.1rem;
 
   &-group {
     width: 100%;
     position: relative;
+    margin-bottom: 2rem;
 
     i {
       font-size: 2.4rem;
@@ -298,7 +279,7 @@ a {
   &-bottom {
     display: flex;
     flex-direction: row;
-    gap: 1rem;
+    // gap: 1rem;
   }
 
   &-text {
@@ -361,6 +342,10 @@ a {
     // }
   }
 
+  &-btn {
+    margin-bottom: 2rem;
+  }
+
   &-textarea {
     font-weight: 700;
     font-size: 1.6rem;
@@ -394,6 +379,7 @@ a {
     appearance: none;
     position: relative;
     cursor: pointer;
+    margin-right: 1rem;
 
     &:checked {
       background: var(--primary-accent);
@@ -403,7 +389,7 @@ a {
   &-file {
     display: flex;
     align-items: center;
-    gap: 0.8rem;
+    // gap: 0.8rem;
     font-weight: 600;
     font-size: 1.4rem;
     line-height: 143%;
@@ -425,13 +411,15 @@ a {
 
     span {
       transition: all 0.3s ease;
+      white-space: nowrap;
     }
 
     div {
       display: flex;
       flex-direction: row;
       align-items: center;
-      gap: 0.5rem;
+      // gap: 0.5rem;
+      margin-right: 0.8rem;
     }
 
     div>span {
@@ -450,6 +438,7 @@ a {
       color: var(--white);
       position: static;
       transition: all 0.3s ease;
+      margin-right: 0.5rem;
     }
 
     &-input {
@@ -472,7 +461,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.7rem;
+    // gap: 0.7rem;
     position: absolute;
     bottom: 5.7rem;
     left: 50%;
@@ -487,6 +476,10 @@ a {
     animation-timing-function: linear;
     animation-fill-mode: forwards;
     animation-iteration-count: infinite;
+
+    &:not(:last-child) {
+      margin-bottom: 0.7rem;
+    }
 
     i {
       font-size: 3.8rem;
@@ -544,12 +537,13 @@ a {
       font-size: 4.4rem;
       text-transform: uppercase;
       color: var(--primary-black);
+      margin-bottom: 2rem;
     }
   }
 
   &__head {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    // gap: 2rem;
   }
 }

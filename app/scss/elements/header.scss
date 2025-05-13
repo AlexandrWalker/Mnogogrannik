@@ -1,5 +1,5 @@
 .header {
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   left: 0;
@@ -11,6 +11,7 @@
   }
 
   &.out {
+    position: fixed;
     background-color: var(--primary-black);
 
     .header__inner {
@@ -43,14 +44,15 @@
   &__wrap {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    // gap: 1rem;
     position: relative;
     width: fit-content;
   }
 
   &__social {
     display: flex;
-    gap: 0.5rem;
+    // gap: 0.5rem;
+    margin-right: 1rem;
 
     &-link {
       display: flex;
@@ -58,6 +60,10 @@
       align-items: center;
       width: 3.4rem;
       height: 3.4rem;
+
+      &:first-child {
+        margin-right: 0.5rem;
+      }
 
       i {
         font-size: 3.4rem;
@@ -90,7 +96,7 @@
   &__phone {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    // gap: 0.5rem;
     font-weight: 400;
     font-size: 2.4rem;
     line-height: 1.3;
@@ -121,6 +127,7 @@
       color: var(--primary-accent);
       transform: scale(-1, -1);
       transition: all 0.3s ease;
+      margin-right: 0.5rem;
     }
   }
 
@@ -149,7 +156,7 @@
       a {
         display: flex;
         align-items: center;
-        gap: 0.8rem;
+        // gap: 0.8rem;
         font-weight: 400;
         font-size: 2rem;
         line-height: 120%;
@@ -171,6 +178,7 @@
           opacity: 0;
           transform: translateX(-2rem);
           transition: all 0.2s ease-in-out;
+          margin-right: 0.8rem;
         }
       }
     }
@@ -195,7 +203,7 @@
   &__btns {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    // gap: 2rem;
     margin-left: auto;
   }
 }
@@ -203,11 +211,11 @@
 .innerPage {
 
   .main {
-    padding-top: 4rem;
+    padding-top: 14rem;
   }
 
   .header {
-    position: static;
+    position: fixed;
     background-color: var(--primary-black);
 
     &__inner {

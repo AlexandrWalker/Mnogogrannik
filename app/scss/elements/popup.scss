@@ -17,13 +17,15 @@
   &__head {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    // gap: 2rem;
+    margin-bottom: 3rem;
   }
 
   &__title {
     font-weight: 700;
     font-size: 4.4rem;
     line-height: 100%;
+    margin-bottom: 2rem;
   }
 
   &__text {
@@ -35,7 +37,7 @@
   &__box {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    // gap: 3rem;
     background-color: var(--white);
     padding: 3rem;
     position: relative;
@@ -62,7 +64,8 @@
       cursor: pointer;
       position: relative;
       background: transparent;
-      margin: 0 0 0 auto;
+      margin-left: auto;
+      margin-bottom: 3rem;
       flex-shrink: 0;
 
       &::before {

@@ -26,12 +26,13 @@
       display: flex;
       justify-content: space-between;
       padding: 5rem 0 10rem;
-      gap: 14rem;
+      // gap: 14rem;
     }
   }
 
   &__menu {
     width: 30%;
+    margin-right: 14rem;
 
     li {
 
@@ -56,19 +57,25 @@
   &__contact {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    // gap: 4rem;
     width: 30%;
+    margin-right: 14rem;
 
     &-wrap {
       display: flex;
       flex-direction: column;
-      gap: 2rem;
+      // gap: 2rem;
+
+      &:not(:last-child) {
+        margin-bottom: 4rem;
+      }
 
       span {
         font-weight: 400;
         font-size: 2.4rem;
         text-transform: uppercase;
         color: var(--primary-accent);
+        margin-bottom: 2rem;
       }
     }
 
@@ -78,6 +85,7 @@
       p {
         font-weight: 700;
         font-size: 2.4rem;
+        line-height: 1.3;
         letter-spacing: 0.05em;
         text-transform: uppercase;
         color: inherit;
@@ -105,15 +113,19 @@
     width: 30%;
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    // gap: 3rem;
 
     a {
       display: flex;
       flex-direction: row;
       align-items: center;
-      gap: 2rem;
+      // gap: 2rem;
       color: inherit;
       max-width: 28.6rem;
+
+      &:not(:last-child) {
+        margin-bottom: 3rem;
+      }
 
       &:hover {
 
@@ -129,6 +141,7 @@
       color: var(--primary-accent);
       flex-shrink: 0;
       transition: all 0.3s ease;
+      margin-right: 2rem;
     }
 
     span {
@@ -143,7 +156,7 @@
   &__item {
     display: flex;
     flex-direction: row;
-    gap: 2rem;
+    // gap: 2rem;
 
 
     i {
@@ -157,6 +170,7 @@
       line-height: 1;
       color: var(--white);
       flex-shrink: 0;
+      margin-right: 2rem;
     }
 
     &:nth-child(2) {

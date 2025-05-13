@@ -83,7 +83,7 @@
   &__inner {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    // gap: 4rem;
     background-color: var(--primary-bg);
     padding: 5rem 22rem 8rem 14rem;
     max-width: 110rem;
@@ -100,6 +100,7 @@
 
   &__head {
     z-index: 2;
+    margin-bottom: 4rem;
   }
 
   &__list {
@@ -131,7 +132,7 @@
     &-inner {
       display: flex;
       flex-direction: row;
-      gap: 4.5rem;
+      // gap: 4.5rem;
     }
   }
 
@@ -139,6 +140,7 @@
     max-width: 40rem;
     width: 100%;
     color: var(--primary-accent);
+    margin-right: 4.5rem;
   }
 
   .footer__items {

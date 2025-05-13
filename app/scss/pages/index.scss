@@ -4,8 +4,6 @@
   position: relative;
   background-color: var(--primary-black);
 
-  &__inner {}
-
   &__item {
     display: flex;
     flex-direction: row;
@@ -196,9 +194,14 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 1rem;
+    // gap: 1rem;
     padding: 7rem 14rem 6rem;
     background-color: var(--white);
+
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIzMSIgaGVpZ2h0PSIyMTQzIiB2aWV3Qm94PSIwIDAgMTIzMSAyMTQzIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KPHBhdGggZD0iTTEwMjUuNTMgMTQyOC40MUw4MjAuMzQgMTc4NS41OUw4MjAuMzQgMTc4NS42TDYxNS43MzYgMjE0Mkw2MTUuMzk3IDIxNDEuNDJMNjE1LjExNCAyMTQxLjk2TDQxMC41MDEgMTc4NS42TDIwNS40NjggMTQyOC40MUwwLjU3NzEwMiAxMDcxLjVMMjA1LjQ2OCA3MTQuNTkzTDQxMC41MDEgMzU3LjQwNUw2MTUuMTE0IDEuMDM3MDhMNjE1LjM5NyAxLjU3NTE3TDYxNS43MzYgMC45OTcwNDNMODIwLjQ2OCAzNTcuNDA0TDgyMC40NjcgMzU3LjQwNUwxMDI1LjUzIDcxNC41OTNMMTIzMC40MiAxMDcxLjVMMTAyNS41MyAxNDI4LjQxWk04MjEuMzM1IDEwNzEuMjVMNjE2LjMwMSA3MTQuMDk1TDYxNi4yOTkgNzE0LjA5Mkw2MTUuOTc5IDcxMy41NDZMNjE1LjUyNSA3MTIuNzY5TDYxNS4xMDUgNzEzLjU2NUw2MTQuODI3IDcxNC4wOTRMNjE0LjgyNyA3MTQuMDk1TDQwOS43NjIgMTA3MS4yNUw0MDkuNjE4IDEwNzEuNUw0MDkuNzYyIDEwNzEuNzVMNjE0LjY5IDE0MjguODlMNjE0Ljk3NyAxNDI5LjQzTDYxNS4zOTcgMTQzMC4yM0w2MTUuODUyIDE0MjkuNDVMNjE2LjE3MSAxNDI4LjkxTDYxNi4xNzMgMTQyOC45MUw4MjEuMzM0IDEwNzEuNzVMODIxLjQ3NyAxMDcxLjVMODIxLjMzNSAxMDcxLjI1WiIgc3Ryb2tlPSIjMzIzMzNCIiBzdHJva2Utb3BhY2l0eT0iMC4xIi8+DQo8L3N2Zz4NCg==);
+    background-repeat: no-repeat;
+    background-size: 123.1rem 214.3rem;
+    background-position: center;
   }
 
   &__title {
@@ -217,6 +220,7 @@
     display: flex;
     flex-direction: column;
     width: 57.4rem;
+    margin-right: 1rem;
 
     .about__text {
       margin-bottom: 5rem;
@@ -232,7 +236,6 @@
   &__body {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
     width: 72.2rem;
 
     .about__text {
@@ -246,6 +249,7 @@
       width: 100%;
       height: auto;
       object-fit: contain;
+      margin-bottom: 4rem;
     }
   }
 }
@@ -258,24 +262,31 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 25rem);
-    gap: 2rem;
+    // gap: 2rem;
   }
 
   &__item {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    // gap: 2rem;
     padding: 4rem;
     background-color: var(--white);
     transition: all 0.3s linear;
     position: relative;
     overflow: hidden;
     cursor: pointer;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
 
     &-head {
       display: flex;
       flex-direction: column;
-      gap: 2rem;
+      // gap: 2rem;
+      margin-bottom: 2rem;
     }
 
     &-count {
@@ -285,6 +296,7 @@
       letter-spacing: 0.05em;
       text-transform: uppercase;
       color: var(--primary-accent);
+      margin-bottom: 2rem;
     }
 
     h3 {
@@ -346,11 +358,12 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 3rem;
+    // gap: 3rem;
   }
 
   &__body {
     width: 100%;
+    margin-top: 3rem;
   }
 
   &__slider {
@@ -384,7 +397,7 @@
     &-head {
       display: flex;
       flex-direction: row;
-      gap: 2rem;
+      // gap: 2rem;
       height: fit-content;
     }
 
@@ -392,6 +405,7 @@
       width: calc(50% - 1rem);
       height: 100%;
       object-fit: cover;
+      margin-right: 2rem;
     }
 
     &-wrap {
@@ -399,7 +413,7 @@
       flex-direction: row;
       justify-content: flex-end;
       align-items: center;
-      gap: 1rem;
+      // gap: 1rem;
       padding: 0 5rem;
       width: calc(50% - 1rem);
 
@@ -407,13 +421,14 @@
         font-size: 6.9rem;
         line-height: 1;
         color: var(--primary-white);
+        margin-left: 1rem;
       }
     }
 
     &-body {
       display: flex;
       flex-direction: column;
-      gap: 2rem;
+      // gap: 2rem;
       height: 100%;
       padding: 3rem 4rem 4rem;
       font-size: 2.4rem;
@@ -424,17 +439,19 @@
       font-weight: 700;
       font-size: inherit;
       text-transform: uppercase;
+      margin-bottom: 2rem;
     }
 
     &-text {
       font-weight: 400;
       font-size: inherit;
+      margin-bottom: 2rem;
     }
 
     &-link {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      // gap: 0.5rem;
       margin-top: auto;
       font-weight: 400;
       font-size: 1.6rem;
@@ -446,6 +463,7 @@
         line-height: 1;
         color: var(--primary-accent);
         transition: all 0.3s ease;
+        margin-right: 0.5rem;
       }
     }
   }
@@ -456,7 +474,7 @@
   &__items {
     display: flex;
     flex-wrap: wrap;
-    gap: 2rem;
+    // gap: 2rem;
   }
 
   &__item {
@@ -468,6 +486,12 @@
     background-color: var(--white);
     position: relative;
     overflow: hidden;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
 
     span {
       display: block;
@@ -598,7 +622,6 @@
   &__block {
     display: flex;
     flex-direction: row;
-    gap: 3rem;
     background-color: var(--primary-accent);
     position: relative;
     overflow: hidden;
@@ -686,7 +709,7 @@
   &__inner {
     display: flex;
     flex-direction: row;
-    gap: 8.5rem;
+    // gap: 8.5rem;
   }
 
   .section__head {
@@ -694,8 +717,12 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: unset;
-    gap: 4rem;
+    // gap: 4rem;
     margin: 0;
+
+    h2 {
+      margin-bottom: 4rem;
+    }
 
     p {
       font-weight: 400;
@@ -704,16 +731,24 @@
     }
   }
 
+  &__body {
+    margin-left: 8.5rem;
+  }
+
   &__items {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    // gap: 2rem;
   }
 
   &__item {
     display: flex;
     flex-direction: row;
-    gap: 2rem;
+    // gap: 2rem;
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
 
     &.active {
 
@@ -742,6 +777,7 @@
       flex-shrink: 0;
       position: relative;
       color: var(--white);
+      margin-right: 2rem;
 
       p {
         font-weight: 300;
@@ -773,7 +809,7 @@
     &-body {
       display: flex;
       flex-direction: column;
-      gap: 3rem;
+      // gap: 3rem;
       padding: 4rem;
       background-color: var(--white);
       width: 72.1rem;
@@ -785,6 +821,7 @@
         text-transform: uppercase;
         color: var(--primary-accent);
         width: 60%;
+        margin-bottom: 3rem;
       }
 
       p {
@@ -829,14 +866,19 @@
   &__content {
     display: flex;
     flex-direction: column;
-    gap: 6rem;
+    // gap: 6rem;
     padding: 8rem 0 7rem 14rem;
     max-width: 80rem;
     position: relative;
     z-index: 2;
+
+    h2 {
+      margin-bottom: 6rem;
+    }
   }
 
   &__quote {
+    margin-bottom: 6rem;
 
     p {
       font-weight: 400;
@@ -867,11 +909,12 @@
   &__wrap {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    // gap: 1rem;
 
     p {
       font-weight: 700;
       font-size: 2.4rem;
+      margin-bottom: 1rem;
     }
 
     span {
@@ -936,7 +979,7 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      gap: 4.5rem;
+      // gap: 4.5rem;
       position: relative;
       height: 27.7rem;
 
@@ -953,13 +996,14 @@
         background-size: 16.4rem 15rem;
         background-position: center;
         transition: all 0.1s ease;
+        margin-right: 4.5rem;
       }
     }
 
     &-body {
       display: flex;
       flex-direction: column;
-      gap: 2rem;
+      // gap: 2rem;
       padding: 4.5rem 4rem;
       width: 65.1rem;
       height: 100%;
@@ -971,6 +1015,7 @@
       line-height: 100%;
       text-transform: uppercase;
       transition: all 0.1s ease;
+      margin-bottom: 2rem;
     }
 
     &-text {
@@ -1042,7 +1087,7 @@
 
   &__inner {
     display: flex;
-    gap: 2.4rem;
+    // gap: 2.4rem;
     background-color: var(--primary-accent);
     padding: 6rem 30rem 4rem 14rem;
     position: relative;
@@ -1074,11 +1119,14 @@
   &__head {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    // gap: 3rem;
     width: 100%;
     z-index: 2;
+    margin-right: 2.4rem;
 
     &-title {
+      margin-bottom: 3rem;
+
       h2 {
         font-weight: 700;
         font-size: 8rem;
