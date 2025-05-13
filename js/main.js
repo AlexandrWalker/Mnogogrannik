@@ -16,10 +16,10 @@
         fadeEffect: {
           crossFade: true
         },
-        autoplay: {
-          delay: 5000,
-          disableOnInteraction: false
-        },
+        // autoplay: {
+        //   delay: 5000,
+        //   disableOnInteraction: false
+        // },
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
@@ -243,9 +243,6 @@
     const lenis = new Lenis({
       anchors: {
         offset: -100,
-        onComplete: () => {
-          console.log('scrolled to anchor')
-        }
       }
     });
 
@@ -426,25 +423,6 @@
       // });
     }
 
-    const parallaxImgContainers = document.querySelectorAll('[data-animation="parallax-img"]');
-    parallaxImgContainers.forEach(parallaxImgContainer => {
-
-      const image = parallaxImgContainer.querySelector('img');
-
-      gsap.fromTo(image,
-        { y: '-5%' },
-        {
-          y: '5%',
-          scrollTrigger: {
-            trigger: parallaxImgContainer,
-            start: 'top 60%',
-            end: 'bottom top',
-            scrub: true
-          }
-        }
-      );
-    });
-
     function scrollTriggerPlayer(triggerElement, timeline, onEnterStart = "top 85%") {
       ScrollTrigger.create({
         trigger: triggerElement,
@@ -465,8 +443,6 @@
 
     if (window.innerWidth >= 769) {
       asd()
-    } else {
-      return;
     }
 
     window.addEventListener('resize', function () {
@@ -480,7 +456,6 @@
     function asd() {
 
       const parallaxContainers = document.querySelectorAll('[data-animation="parallax"]');
-
       parallaxContainers.forEach(parallaxContainer => {
         gsap.fromTo(parallaxContainer, {
           y: "0%"
@@ -493,6 +468,25 @@
             scrub: true
           }
         })
+      });
+
+      const parallaxImgContainers = document.querySelectorAll('[data-animation="parallax-img"]');
+      parallaxImgContainers.forEach(parallaxImgContainer => {
+
+        const image = parallaxImgContainer.querySelector('img');
+
+        gsap.fromTo(image,
+          { y: '-5%' },
+          {
+            y: '5%',
+            scrollTrigger: {
+              trigger: parallaxImgContainer,
+              start: 'top 60%',
+              end: 'bottom top',
+              scrub: true
+            }
+          }
+        );
       });
     }
 
