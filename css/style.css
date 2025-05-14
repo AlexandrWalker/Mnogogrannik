@@ -225,6 +225,20 @@ body {
   position: relative;
   overflow-x: hidden;
 }
+body:not(.innerPage)::before {
+  content: " ";
+  width: 100%;
+  height: 100%;
+  background-image: url(./../images/tmp/main/bg.png);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  position: absolute;
+  left: 0;
+  top: 0;
+  will-change: transform;
+  z-index: 0;
+}
+
 .no-scroll {
   overflow: hidden;
   height: 100dvh !important;
@@ -1445,6 +1459,7 @@ a {
   width: 100%;
 }
 .modal .form-textarea, .modal .form-input {
+  color: var(--primary-black);
   border-color: var(--primary-black-30);
 }
 .modal .form-textarea::placeholder, .modal .form-input::placeholder {
@@ -3386,6 +3401,40 @@ a {
   .modal .form-input {
     padding: 1rem 4.6rem 1rem 2.2rem;
   }
+  /* privacy */
+  .main__prolog {
+    margin-bottom: 2rem;
+  }
+  .main__prolog h1 {
+    font-size: 2.4rem;
+    word-break: break-word;
+  }
+  .privacy__download {
+    margin-bottom: 0;
+  }
+  .privacy h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .privacy p {
+    font-size: 1.4rem;
+  }
+  .privacy p:not(:last-child) {
+    margin-bottom: 1.6rem;
+  }
+  .privacy ul {
+    padding: 0 0 0 2rem;
+  }
+  .privacy li {
+    margin-bottom: 1.6rem;
+  }
+  .privacy li::before {
+    top: 0.8rem;
+    left: -1.2rem;
+  }
+  .innerPage .main {
+    padding-top: 10rem;
+  }
 }
 @media (max-width: 680px) {
   /* products */
@@ -3745,20 +3794,20 @@ a {
   .menu__head {
     margin-bottom: 2rem;
   }
-  .menu .footer__contact-wrap span {
+  .footer__contact-wrap span {
     font-size: 1.2rem;
   }
-  .menu .footer__contact-text {
+  .footer__contact-text {
     line-height: 1.2rem;
   }
-  .menu .footer__contact-text a,
-  .menu .footer__contact-text p {
+  .footer__contact-text a,
+  .footer__contact-text p {
     font-size: 1.2rem;
   }
   .footer__contact-wrap:not(:last-child) {
     margin-bottom: 1rem;
   }
-  .menu .footer__items i {
+  .footer__items i {
     font-size: 3.4rem;
   }
   .footer__items .footer__item i {
@@ -3766,7 +3815,7 @@ a {
     height: 3.4rem;
     font-size: 2rem;
   }
-  .menu .footer__items a {
+  .footer__items a {
     max-width: 100%;
   }
   .footer__items a:not(:last-child) {
@@ -3782,36 +3831,6 @@ a {
   }
   .modal__head {
     margin-left: 0.5rem;
-  }
-  /* privacy */
-  .privacy h1 {
-    font-size: 2.4rem;
-  }
-  .privacy__download {
-    margin-bottom: 0;
-  }
-  .privacy h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-  }
-  .privacy p {
-    font-size: 1.4rem;
-  }
-  .privacy p:not(:last-child) {
-    margin-bottom: 1.6rem;
-  }
-  .privacy ul {
-    padding: 0 0 0 2rem;
-  }
-  .privacy li {
-    margin-bottom: 1.6rem;
-  }
-  .privacy li::before {
-    top: 0.8rem;
-    left: -1.2rem;
-  }
-  .innerPage .main {
-    padding-top: 13rem;
   }
 }
 @media (max-width: 480px) {
