@@ -31,8 +31,7 @@
 .warning {
   position: fixed;
   bottom: 4rem;
-  left: 50%;
-  transform: translateX(-50%);
+  right: 4rem;
   z-index: 200;
   width: fit-content;
   background-color: var(--primary-black);

@@ -440,7 +440,7 @@
       scrollTriggerPlayer(fadeUpItem, tl);
     });
 
-    function scrollTriggerPlayer(triggerElement, timeline, onEnterStart = "top 85%") {
+    function scrollTriggerPlayer(triggerElement, timeline, onEnterStart = "top 90%") {
       ScrollTrigger.create({
         trigger: triggerElement,
         start: "top bottom",
@@ -475,7 +475,7 @@
       const parallaxContainers = document.querySelectorAll('[data-animation="parallax"]');
       parallaxContainers.forEach(parallaxContainer => {
         gsap.fromTo(parallaxContainer, {
-          y: "0%"
+          y: "-10%"
         }, {
           y: "10%",
           scrollTrigger: {
@@ -574,6 +574,7 @@
       let lastScroll = 0;
       const defaultOffset = 0;
       const header = document.querySelector('.header');
+      const headerLogo = document.querySelector('.header__logo');
       const hero = document.querySelector('.hero');
 
       const scrollPosition = () => window.pageYOffset || document.documentElement.scrollTop;
@@ -592,14 +593,31 @@
       //   lastScroll = scrollPosition();
       // })
 
+
+
       window.addEventListener('scroll', () => {
         if (hero) {
           if (scrollPosition() > hero.offsetHeight) {
             header.classList.add('out');
+            // header.classList.remove('hide');
           }
           else {
             header.classList.remove('out');
+            // header.classList.add('hide');
           }
+
+          if (scrollPosition() > 150) {
+            header.classList.add('change');
+          } else {
+            header.classList.remove('change');
+          }
+
+          if (scrollPosition() > 30) {
+            header.classList.add('hide');
+          } else {
+            header.classList.remove('hide');
+          }
+
         } else {
           if (scrollPosition() > 0) {
             header.classList.add('out');

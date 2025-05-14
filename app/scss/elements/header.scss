@@ -1,5 +1,5 @@
 .header {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   left: 0;
@@ -10,14 +10,8 @@
     transform: translateY(-100%);
   }
 
-  &.out {
-    position: fixed;
-    background-color: var(--primary-black);
-
-    .header__inner {
-      align-items: center;
-      padding: 2rem 0;
-    }
+  &.change {
+    transform: translateY(-100%);
 
     .header__logo {
       margin: 0;
@@ -30,6 +24,17 @@
           display: block;
         }
       }
+    }
+  }
+
+  &.out {
+    // position: fixed;
+    transform: translateY(0);
+    background-color: var(--primary-black);
+
+    .header__inner {
+      align-items: center;
+      padding: 2rem 0;
     }
   }
 
@@ -215,7 +220,6 @@
   }
 
   .header {
-    position: fixed;
     background-color: var(--primary-black);
 
     &__inner {
