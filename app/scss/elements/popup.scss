@@ -124,6 +124,7 @@
 
     &-textarea,
     &-input {
+      color: var(--primary-black);
       border-color: var(--primary-black-30);
 
       &::placeholder {

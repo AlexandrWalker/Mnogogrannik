@@ -25,19 +25,19 @@ body {
 
   &:not(.innerPage) {
 
-    //   &::before {
-    //     content: ' ';
-    //     width: 100%;
-    //     height: 100%;
-    //     background-image: url(./../images/tmp/main/bg.png);
-    //     background-repeat: no-repeat;
-    //     background-size: 100% auto;
-    //     position: absolute;
-    //     left: 0;
-    //     top: 0;
-    //     will-change: transform;
-    //     z-index: 0;
-    //   }
+    &::before {
+      content: ' ';
+      width: 100%;
+      height: 100%;
+      background-image: url(./../images/tmp/main/bg.png);
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+      position: absolute;
+      left: 0;
+      top: 0;
+      will-change: transform;
+      z-index: 0;
+    }
 
     // &::before {
     //   content: "";

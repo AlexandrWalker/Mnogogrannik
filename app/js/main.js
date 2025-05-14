@@ -421,7 +421,7 @@
       const tl = gsap.timeline({ paused: true });
 
       tl.fromTo(words,
-        { opacity: 0, y: 80 },
+        { opacity: 0, y: 30 },
         { opacity: 1, y: 0, duration: 0.4, ease: 'power1.out', stagger: { amount: 0.6 } }
       );
 
