@@ -185,6 +185,28 @@
       background-size: 100%;
     }
   }
+
+    &--5 {
+    display: block;
+    width: 211.5rem;
+    height: 368.3rem;
+    position: absolute;
+    bottom: -25.7rem;
+    left: 50%;
+    z-index: 13;
+    transform: translateX(-50%);
+    mix-blend-mode: overlay;
+
+    .component__item {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      background-image: url(./../images/tmp/rombs/rombs-fill-black.svg);
+      background-repeat: no-repeat;
+      background-size: 100%;
+    }
+  }
 }
 
 .about {
@@ -710,7 +732,7 @@
     }
   }
 
-  .component--3 {
+  .component--5 {
     bottom: -84.7rem;
     left: -28.4rem;
     transform: unset;
