@@ -1142,9 +1142,8 @@
 
   /* plate */
   .warning {
-    width: max-content;
     bottom: 2rem;
-    right: 2rem;
+    width: max-content;
     max-width: calc(100% - 4rem);
   }
 
@@ -1760,6 +1759,14 @@
 
   .modal__head {
     margin-left: 0.5rem;
+  }
+
+  /* plate */
+  .warning {
+    right: unset;
+    left: 50%;
+    bottom: 1rem;
+    transform: translateX(-50%);
   }
 }
 

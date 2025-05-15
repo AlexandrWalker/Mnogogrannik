@@ -316,7 +316,6 @@
       const component4Item = component4.querySelector(".component__item");
 
       const hero = document.querySelector(".hero");
-      const heroContent = document.querySelectorAll(".hero__content");
 
       gsap.from(component1Item, {
         opacity: 1,
@@ -440,24 +439,6 @@
       scrollTriggerPlayer(fadeUpItem, tl);
     });
 
-    function scrollTriggerPlayer(triggerElement, timeline, onEnterStart = "top 90%") {
-      ScrollTrigger.create({
-        trigger: triggerElement,
-        start: "top bottom",
-        onLeaveBack: () => {
-          timeline.progress(0);
-          timeline.pause()
-        }
-      });
-      ScrollTrigger.create({
-        trigger: triggerElement,
-        start: onEnterStart,
-        onEnter: () => timeline.play(0)
-      })
-    }
-
-
-
     if (window.innerWidth >= 769) {
       asd()
     }
@@ -505,6 +486,22 @@
           }
         );
       });
+    }
+
+    function scrollTriggerPlayer(triggerElement, timeline, onEnterStart = "top 90%") {
+      ScrollTrigger.create({
+        trigger: triggerElement,
+        start: "top bottom",
+        onLeaveBack: () => {
+          timeline.progress(1);
+          timeline.pause()
+        }
+      });
+      ScrollTrigger.create({
+        trigger: triggerElement,
+        start: onEnterStart,
+        onEnter: () => timeline.play()
+      })
     }
 
 
