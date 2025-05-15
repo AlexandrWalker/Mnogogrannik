@@ -260,28 +260,28 @@
       const word1 = new SplitType(title2WordInner, { types: 'words, words' });
     });
 
-    // const revealItems = document.querySelectorAll('[data-animation="reveal"]');
-    // revealItems.forEach(revealItem => {
-    //   const word = revealItem.querySelectorAll("div.word");
+    const revealItems = document.querySelectorAll('[data-animation="reveal"]');
+    revealItems.forEach(revealItem => {
+      const word = revealItem.querySelectorAll("div.word");
 
-    //   const tl = gsap.timeline({
-    //     paused: true
-    //   });
-    //   tl.from(word, {
-    //     // opacity: 0,
-    //     y: "10",
-    //     duration: .4,
-    //     ease: "power1.out",
-    //     stagger: {
-    //       amount: .6
-    //     },
-    //   }, 0).to(word, {
-    //     opacity: 1,
-    //     duration: 0.4,
-    //     stagger: { amount: .6 },
-    //   }, 0);
-    //   scrollTriggerPlayer(revealItem, tl)
-    // });
+      const tl = gsap.timeline({
+        paused: true
+      });
+      tl.from(word, {
+        opacity: 0,
+        y: "30",
+        duration: .4,
+        ease: "power1.out",
+        stagger: {
+          amount: .6
+        },
+      }, 0).to(word, {
+        opacity: 1,
+        duration: 0.4,
+        stagger: { amount: .6 },
+      }, 0);
+      scrollTriggerPlayer(revealItem, tl)
+    });
 
     // const fadeUpItems = document.querySelectorAll('[data-animation="fadeUp"]');
     // fadeUpItems.forEach(fadeUpItem => {
@@ -412,40 +412,44 @@
 
 
     // текст снизу вверх из прозрачности
-    const revealItems = document.querySelectorAll('[data-animation="reveal"]')
+    // const revealItems = document.querySelectorAll('[data-animation="reveal"]')
 
-    revealItems.forEach((revealItem) => {
+    // revealItems.forEach((revealItem) => {
 
-      const words = revealItem.querySelectorAll('div.word');
-      // const tl = gsap.timeline({ paused: true });
+    //   const words = revealItem.querySelectorAll('div.word');
+    //   const tl = gsap.timeline({ paused: true });
 
-      gsap.fromTo(words,
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1, y: 0, duration: 0.4, ease: 'power1.out', stagger: { amount: 0.6 },
-          scrollTrigger: {
-            trigger: revealItem,
-            start: "top 80%",
-            end: "bottom 20%",
-            toggleActions: "play none none none",
-            preventOverlaps: true,
-          }
-        }
-      );
+    //   tl.fromTo(words,
+    //     { opacity: 0, y: 30 },
+    //     { opacity: 1, y: 0, duration: 0.4, ease: 'power1.out', stagger: { amount: 0.6 } }
+    //   );
 
-      // scrollTriggerPlayer(revealItem, tl);
-    });
+    //   scrollTriggerPlayer(revealItem, tl);
+    // });
 
     // блоки снизу вверх из прозрачности
     const fadeUpItems = document.querySelectorAll('[data-animation="fadeUp"]')
 
     fadeUpItems.forEach((fadeUpItem) => {
 
-      const tl = gsap.timeline({ paused: true });
+      const tl = gsap.timeline({
+        paused: true
+      });
+      tl.from(fadeUpItem, {
+        opacity: 0,
+        y: "80",
+        duration: .8,
+        ease: "power1.out",
+        stagger: {
+          amount: .8
+        },
+      }, 0).to(fadeUpItem, {
+        opacity: 1,
+        duration: 0.8,
+        stagger: { amount: .8 },
+      }, 0);
+      scrollTriggerPlayer(fadeUpItem, tl)
 
-      tl.from(fadeUpItem, { opacity: 0, y: '80', duration: .8, ease: 'power1.out', stagger: { amount: 0.8 } });
-
-      scrollTriggerPlayer(fadeUpItem, tl);
     });
 
     if (window.innerWidth >= 769) {

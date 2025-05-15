@@ -91,12 +91,16 @@ section {
   margin-bottom: 5rem;
 }
 
-// [data-animation="reveal"] {
+[data-animation="reveal"] {
 
-//   .word {
-//     opacity: 0;
-//   }
-// }
+  .word {
+    opacity: 0;
+  }
+}
+
+[data-animation="fadeUp"] {
+  opacity: 0;
+}
 
 h1 {
   font-weight: 700;
