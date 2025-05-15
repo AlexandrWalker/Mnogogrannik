@@ -1910,7 +1910,7 @@ a {
   display: block;
   width: 15rem;
   height: 15rem;
-  transition: all 0.3s ease;
+  transition: background-image 0.3s ease;
   position: absolute;
   top: 0;
   left: 0;
@@ -2340,7 +2340,7 @@ a {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  transition: all 0.2s ease;
+  transition: background-image 0.2s ease;
 }
 .work__item-body {
   display: flex;
