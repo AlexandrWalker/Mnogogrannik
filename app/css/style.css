@@ -2075,7 +2075,7 @@ a {
   position: sticky;
   background-color: var(--primary-bg);
   transition: all 0.6s;
-  top: 0;
+  top: 13rem;
 }
 .tasks__item:not(:last-child) {
   margin-bottom: 2rem;
@@ -3618,16 +3618,16 @@ a {
     top: 2rem;
   }
   .tasks__item:nth-child(1) {
-    top: 5rem;
-  }
-  .tasks__item:nth-child(2) {
-    top: 6rem;
-  }
-  .tasks__item:nth-child(3) {
     top: 8rem;
   }
+  .tasks__item:nth-child(2) {
+    top: 9rem;
+  }
+  .tasks__item:nth-child(3) {
+    top: 11rem;
+  }
   .tasks__item:nth-child(4) {
-    top: 10rem;
+    top: 13rem;
   }
   .tasks__item:nth-child(5) {
     top: 0;
