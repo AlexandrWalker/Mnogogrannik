@@ -751,6 +751,9 @@
 
   &__body {
     margin-left: 8.5rem;
+    overflow: visible;
+    position: sticky;
+    top: 13rem;
   }
 
   &__items {

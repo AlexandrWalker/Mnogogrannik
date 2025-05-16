@@ -373,41 +373,41 @@
     }
 
     const hero = document.querySelector(".hero");
-    // const target = document.querySelectorAll('.hero__title');
+    const target = document.querySelectorAll('.hero__title');
 
-    // for (let i = 0; i < target.length; i++) {
+    for (let i = 0; i < target.length; i++) {
 
-    //   const text = new SplitType(target[i], { types: 'lines, words' })
-    //   const tl = gsap.timeline({
-    //     paused: true
-    //   });
-    //   tl.from(text.words, {
-    //     // opacity: 0,
-    //     x: -100,
-    //     duration: 0.5,
-    //     // delay: 0.5,
-    //     stagger: { amount: 0.6 },
-    //     scrollTrigger: {
-    //       trigger: hero,
-    //       start: "top 80%",
-    //       end: "bottom 20%",
-    //       toggleActions: "play none none none",
-    //       preventOverlaps: true,
-    //     },
-    //   }, 0).to(text.words, {
-    //     opacity: 1,
-    //     duration: 0.5,
-    //     // delay: 0.5,
-    //     stagger: { amount: 0.6 },
-    //   }, 0);
-    //   scrollTriggerPlayer(target[i], tl)
-    //   // gsap.to(text.words, {
-    //   //   opacity: 1,
-    //   //   duration: 0.5,
-    //   //   delay: 0.5,
-    //   //   stagger: { amount: 1 },
-    //   // });
-    // }
+      const text = new SplitType(target[i], { types: 'lines, words' })
+      const tl = gsap.timeline({
+        paused: true
+      });
+      tl.from(text.words, {
+        opacity: 0,
+        x: -100,
+        duration: 0.5,
+        delay: 0.5,
+        stagger: { amount: 0.6 },
+        scrollTrigger: {
+          trigger: hero,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none none",
+          preventOverlaps: true,
+        },
+      }, 0).to(text.words, {
+        opacity: 1,
+        duration: 0.5,
+        delay: 0.5,
+        stagger: { amount: 0.6 },
+      }, 0);
+      scrollTriggerPlayer(target[i], tl)
+      // gsap.to(text.words, {
+      //   opacity: 1,
+      //   duration: 0.5,
+      //   delay: 0.5,
+      //   stagger: { amount: 1 },
+      // });
+    }
 
 
 
@@ -453,18 +453,18 @@
     });
 
     if (window.innerWidth >= 769) {
-      asd()
+      parallaxFunc()
     }
 
     window.addEventListener('resize', function () {
       if (window.innerWidth >= 769) {
-        asd()
+        parallaxFunc()
       } else {
         return;
       }
     }, true);
 
-    function asd() {
+    function parallaxFunc() {
 
       const parallaxContainers = document.querySelectorAll('[data-animation="parallax"]');
       parallaxContainers.forEach(parallaxContainer => {

@@ -1147,12 +1147,6 @@
   }
 
   /* plate */
-  .warning {
-    bottom: 2rem;
-    width: max-content;
-    max-width: calc(100% - 4rem);
-  }
-
   .warning__inner {
     // gap: 1.5rem;
     padding: 0.8rem 2rem;
@@ -1807,10 +1801,11 @@
 
   /* plate */
   .warning {
-    right: unset;
-    left: 50%;
     bottom: 1rem;
-    transform: translateX(-50%);
+  }
+
+  .warning__inner {
+    margin: 0 auto;
   }
 }
 
