@@ -1,5 +1,10 @@
+const now = new Date().toISOString();
+console.log(now + ' Страница начинает загрузку');
+
 (() => {
   document.addEventListener('DOMContentLoaded', () => {
+    const now = new Date().toISOString();
+    console.log(now + ' Страница начинает загрузку после полной загрузки DOM');
 
     /**
      * Инициализация слайдеров swiper
@@ -321,40 +326,38 @@
         opacity: 1,
         y: -500,
         duration: 0.6,
+        delay: 0.6,
         scrollTrigger: {
           trigger: hero,
           start: "top 80%",
           end: "bottom 20%",
           toggleActions: "play none none none",
-          preventOverlaps: true,
         }
       });
 
       gsap.from(component2Item, {
         opacity: 1,
         y: -1200,
-        duration: 0.5,
-        delay: 0.6,
+        duration: 0.6,
+        delay: 1.2,
         scrollTrigger: {
           trigger: hero,
           start: "top 80%",
           end: "bottom 20%",
           toggleActions: "play none none none",
-          preventOverlaps: true,
         }
       });
 
       gsap.from(component3Item, {
         opacity: 1,
         y: -1200,
-        duration: 0.5,
-        delay: 0.6,
+        duration: 0.6,
+        delay: 1.2,
         scrollTrigger: {
           trigger: hero,
           start: "top 80%",
           end: "bottom 20%",
           toggleActions: "play none none none",
-          preventOverlaps: true,
         }
       });
 
@@ -362,12 +365,12 @@
         opacity: 1,
         y: 1200,
         duration: 0.6,
+        delay: 0.6,
         scrollTrigger: {
           trigger: hero,
           start: "top 80%",
           end: "bottom 20%",
           toggleActions: "play none none none",
-          preventOverlaps: true,
         }
       });
     }
@@ -384,20 +387,19 @@
       tl.from(text.words, {
         opacity: 0,
         x: -100,
-        duration: 0.5,
-        delay: 0.5,
+        duration: 0.6,
+        delay: 0.6,
         stagger: { amount: 0.6 },
         scrollTrigger: {
           trigger: hero,
           start: "top 80%",
           end: "bottom 20%",
           toggleActions: "play none none none",
-          preventOverlaps: true,
         },
       }, 0).to(text.words, {
         opacity: 1,
-        duration: 0.5,
-        delay: 0.5,
+        duration: 0.6,
+        delay: 0.6,
         stagger: { amount: 0.6 },
       }, 0);
       scrollTriggerPlayer(target[i], tl)
@@ -685,6 +687,9 @@
         // Your custom options
       });
     }
+
+    console.log = ((log) => (...args) => log(new Date().toISOString(), ...args))(console.log);
+    console.log("Страница полностью загружена");
 
   });
 })();

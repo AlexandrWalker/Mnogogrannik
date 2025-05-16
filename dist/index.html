@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="./libs/splitting/splitting.css">
   <link rel="stylesheet" href="./libs/splitting/splitting-cells.css">
 
-  <link rel="stylesheet" href="./css/style.css?v=9">
+  <link rel="stylesheet" href="./css/style.css?v=10">
 </head>
 
 <body>
@@ -232,7 +232,7 @@
                     <picture class="hero__img">
                       <source media="(min-width: 769px)" srcset="./images/tmp/main/hero-1-long.jpg" type="image/jpg">
                       <source media="(max-width: 768px)" srcset="./images/tmp/main/hero-1.jpg" type="image/jpg">
-                      <img src="./images/tmp/main/hero-1-long.jpg" alt="" loading="lazy">
+                      <img src="./images/tmp/main/hero-1-long.jpg" alt="">
                     </picture>
                   </div>
                 </div>
@@ -257,7 +257,7 @@
                     <picture class="hero__img">
                       <source media="(min-width: 769px)" srcset="./images/tmp/main/hero-2-long.jpg" type="image/jpg">
                       <source media="(max-width: 768px)" srcset="./images/tmp/main/hero-2.jpg" type="image/jpg">
-                      <img src="./images/tmp/main/hero-2-long.jpg" alt="" loading="lazy">
+                      <img src="./images/tmp/main/hero-2-long.jpg" alt="">
                     </picture>
                   </div>
                 </div>
@@ -876,7 +876,7 @@
               <picture class="quiz__pic">
                 <source media="(min-width: 601px)" srcset="./images/tmp/main/quiz.png" type="image/png">
                 <source media="(max-width: 600px)" srcset="./images/tmp/main/quiz-mob.jpg" type="image/png">
-                <img class="quiz__img" src="./images/tmp/main/quiz.png" alt="" loading="lazy">
+                <img class="quiz__img" src="./images/tmp/main/quiz.png" alt="">
               </picture>
             </div>
           </div>
@@ -1216,12 +1216,12 @@
         <div class="container">
           <div class="request__inner" data-animation="fadeUp">
             <div class="request__head">
-              <div class="request__head-title">
+              <div class="request__head-title" data-animation="reveal" data-splitting="words">
                 <h2>
                   Оставьте
-                  заявку&nbspдля
+                  <div>заявку&nbspдля</div>
                   сотрудничества
-                  с&nbspнами
+                  <div>с&nbspнами</div>
                 </h2>
               </div>
               <div class="request__head-text">
@@ -1490,7 +1490,7 @@
     <script src="./libs/splitting/splitting.js"></script>
     <script src="./libs/splitting/split-type.js"></script>
     
-    <script src="./js/main.js?v=9"></script>
+    <script src="./js/main.js?v=10"></script>
     </body>
     
     </html>
