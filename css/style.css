@@ -1745,7 +1745,6 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  overflow-y: auto;
   visibility: hidden;
   opacity: 0;
   -webkit-transition: opacity 0.2s, visibility 0.2s;
