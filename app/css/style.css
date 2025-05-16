@@ -1371,7 +1371,6 @@ a {
   display: grid;
   align-items: center;
   justify-content: center;
-  overflow-y: auto;
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.2s, visibility 0.2s;
