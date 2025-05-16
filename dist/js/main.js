@@ -543,12 +543,21 @@
     /**
      * Кнопка куки
      */
-    const warningBtn = document.getElementById('warning-btn');
-    if (warningBtn) {
-      warningBtn.addEventListener('click', event => {
-        document.getElementById('warning-plate').style.display = 'none';
-      });
+
+    if (('; ' + document.cookie).split(`; COOKIE_ACCEPT=`).pop().split(';')[0] !== '1') {
+      const cookiesNotify = document.getElementById('warning-plate');
+
+      if (cookiesNotify) {
+        cookiesNotify.style.display = 'block';
+      }
     }
+
+    // const warningBtn = document.getElementById('warning-btn');
+    // if (warningBtn) {
+    //   warningBtn.addEventListener('click', event => {
+    //     document.getElementById('warning-plate').style.display = 'none';
+    //   });
+    // }
 
 
     /**
@@ -865,3 +874,8 @@ $(window).on('resize load', function () {
 
   }
 });
+
+function checkCookies() {
+  document.cookie = 'COOKIE_ACCEPT=1;path=\'/\';expires:' + (new Date(new Date().getTime() + 86400e3 * 365).toUTCString());
+  document.getElementById('warning-plate').remove();
+}
