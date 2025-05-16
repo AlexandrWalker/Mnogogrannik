@@ -246,7 +246,7 @@ body:not(.innerPage)::before {
 
 section {
   overflow: hidden;
-  margin-bottom: 12rem;
+  margin-bottom: 6rem;
 }
 
 .wrapper {
@@ -1666,7 +1666,7 @@ a {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 7rem 14rem 6rem;
+  padding: 6rem 14rem;
   background-color: var(--white);
   background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIzMSIgaGVpZ2h0PSIyMTQzIiB2aWV3Qm94PSIwIDAgMTIzMSAyMTQzIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KPHBhdGggZD0iTTEwMjUuNTMgMTQyOC40MUw4MjAuMzQgMTc4NS41OUw4MjAuMzQgMTc4NS42TDYxNS43MzYgMjE0Mkw2MTUuMzk3IDIxNDEuNDJMNjE1LjExNCAyMTQxLjk2TDQxMC41MDEgMTc4NS42TDIwNS40NjggMTQyOC40MUwwLjU3NzEwMiAxMDcxLjVMMjA1LjQ2OCA3MTQuNTkzTDQxMC41MDEgMzU3LjQwNUw2MTUuMTE0IDEuMDM3MDhMNjE1LjM5NyAxLjU3NTE3TDYxNS43MzYgMC45OTcwNDNMODIwLjQ2OCAzNTcuNDA0TDgyMC40NjcgMzU3LjQwNUwxMDI1LjUzIDcxNC41OTNMMTIzMC40MiAxMDcxLjVMMTAyNS41MyAxNDI4LjQxWk04MjEuMzM1IDEwNzEuMjVMNjE2LjMwMSA3MTQuMDk1TDYxNi4yOTkgNzE0LjA5Mkw2MTUuOTc5IDcxMy41NDZMNjE1LjUyNSA3MTIuNzY5TDYxNS4xMDUgNzEzLjU2NUw2MTQuODI3IDcxNC4wOTRMNjE0LjgyNyA3MTQuMDk1TDQwOS43NjIgMTA3MS4yNUw0MDkuNjE4IDEwNzEuNUw0MDkuNzYyIDEwNzEuNzVMNjE0LjY5IDE0MjguODlMNjE0Ljk3NyAxNDI5LjQzTDYxNS4zOTcgMTQzMC4yM0w2MTUuODUyIDE0MjkuNDVMNjE2LjE3MSAxNDI4LjkxTDYxNi4xNzMgMTQyOC45MUw4MjEuMzM0IDEwNzEuNzVMODIxLjQ3NyAxMDcxLjVMODIxLjMzNSAxMDcxLjI1WiIgc3Ryb2tlPSIjMzIzMzNCIiBzdHJva2Utb3BhY2l0eT0iMC4xIi8+DQo8L3N2Zz4NCg==);
   background-repeat: no-repeat;
@@ -1677,6 +1677,7 @@ a {
   margin-bottom: 4rem;
 }
 .about__title h2 {
+  line-height: 80%;
   width: min-content;
 }
 .about p:not(:last-child) {
@@ -1701,6 +1702,9 @@ a {
   flex-direction: column;
   width: 72.2rem;
 }
+.about__body .about__text {
+  margin-top: 4rem;
+}
 .about__body .about__text p:last-child {
   color: var(--primary-accent);
 }
@@ -1708,16 +1712,18 @@ a {
   width: 100%;
   height: auto;
   object-fit: contain;
-  margin-bottom: 4rem;
 }
 
 .features {
   position: relative;
   z-index: 30;
 }
+.features h2 {
+  line-height: 90%;
+}
 .features__items {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, auto);
   grid-template-rows: repeat(2, 25rem);
 }
 .features__item {
@@ -2470,7 +2476,7 @@ a {
   height: 4rem;
   flex-shrink: 0;
   background-color: var(--primary-accent);
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   color: var(--white);
   margin-right: 1.5rem;
 }
@@ -2508,6 +2514,7 @@ a {
 }
 .privacy ul {
   padding: 0 0 0 2.4rem;
+  margin-bottom: 2rem;
 }
 .privacy li {
   position: relative;
@@ -2628,7 +2635,7 @@ a {
 }
 @media (max-width: 1440px) {
   section {
-    margin-bottom: 5rem;
+    margin-bottom: 4rem;
   }
   .header.out .header__inner {
     padding: 1rem 0;
@@ -2811,8 +2818,8 @@ a {
   .about__body {
     width: 50%;
   }
-  .about__body img {
-    margin-bottom: 2rem;
+  .about__body .about__text {
+    margin-top: 2rem;
   }
   .about p:not(:last-child) {
     margin-bottom: 1.6rem;
@@ -2987,7 +2994,7 @@ a {
     margin: 1rem;
   }
   .products__item p {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     word-break: break-word;
   }
   .products__item::before {
@@ -3422,6 +3429,7 @@ a {
   }
   .privacy ul {
     padding: 0 0 0 2rem;
+    margin-bottom: 1.5rem;
   }
   .privacy li {
     margin-bottom: 1.6rem;
@@ -3434,7 +3442,7 @@ a {
     padding-top: 10rem;
   }
 }
-@media (max-width: 680px) {
+@media (max-width: 750px) {
   /* products */
   .products__item {
     width: calc(50% - 0.5rem);
@@ -3447,6 +3455,9 @@ a {
   }
   .products__item:hover::after {
     right: -50%;
+  }
+  .products__item p {
+    font-size: 1.6rem;
   }
 }
 @media (max-width: 600px) {
@@ -3846,6 +3857,10 @@ a {
   .products__item::before {
     right: -84%;
   }
+  .products__item p {
+    font-size: 1.4rem;
+    word-break: unset;
+  }
   /* quiz */
   .quiz .component--5 {
     right: -26.9rem;
@@ -3882,12 +3897,16 @@ a {
 @media (max-width: 360px) {
   .products__item {
     width: 100%;
+    margin-right: 0;
   }
   .products__item::before {
     right: -50%;
   }
   .products__item:hover::after {
     right: -50%;
+  }
+  .products__item p {
+    font-size: 1.6rem;
   }
   .form-file {
     flex-wrap: wrap;

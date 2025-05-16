@@ -144,7 +144,7 @@
 
 @media (max-width: 1440px) {
   section {
-    margin-bottom: 5rem;
+    margin-bottom: 4rem;
   }
 
   .header.out .header__inner {
@@ -384,8 +384,10 @@
     // gap: 2rem;
   }
 
-  .about__body img {
-    margin-bottom: 2rem;
+  // .about__body img {
+  .about__body .about__text {
+    margin-top: 2rem;
+    // margin-bottom: 2rem;
   }
 
   .about p:not(:last-child) {
@@ -635,7 +637,7 @@
   }
 
   .products__item p {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     word-break: break-word;
   }
 
@@ -1226,6 +1228,7 @@
 
   .privacy ul {
     padding: 0 0 0 2rem;
+    margin-bottom: 1.5rem;
   }
 
   .privacy li {
@@ -1242,7 +1245,7 @@
   }
 }
 
-@media (max-width: 680px) {
+@media (max-width: 750px) {
 
   /* products */
   .products__item {
@@ -1259,6 +1262,10 @@
 
   .products__item:hover::after {
     right: -50%;
+  }
+
+  .products__item p {
+    font-size: 1.6rem;
   }
 }
 
@@ -1818,6 +1825,11 @@
     right: -84%;
   }
 
+  .products__item p {
+    font-size: 1.4rem;
+    word-break: unset;
+  }
+
   /* quiz */
   .quiz .component--5 {
     right: -26.9rem;
@@ -1861,6 +1873,7 @@
 @media (max-width: 360px) {
   .products__item {
     width: 100%;
+    margin-right: 0;
   }
 
   .products__item::before {
@@ -1869,6 +1882,10 @@
 
   .products__item:hover::after {
     right: -50%;
+  }
+
+  .products__item p {
+    font-size: 1.6rem;
   }
 
   .form-file {
