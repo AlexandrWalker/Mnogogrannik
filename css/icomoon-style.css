@@ -1,18 +1,19 @@
 @font-face {
-  font-family: 'Mnogogrannik';
-  src:  url('./../fonts/icomoon/Mnogogrannik.eot?h2ng4t');
-  src:  url('./../fonts/icomoon/Mnogogrannik.eot?h2ng4t#iefix') format('embedded-opentype'),
-    url('./../fonts/icomoon/Mnogogrannik.ttf?h2ng4t') format('truetype'),
-    url('./../fonts/icomoon/Mnogogrannik.woff?h2ng4t') format('woff'),
-    url('./../fonts/icomoon/Mnogogrannik.svg?h2ng4t#Mnogogrannik') format('svg');
+  font-family: 'mgk';
+  src: url('./../fonts/icomoon/mgk.eot?jf23wb');
+  src: url('./../fonts/icomoon/mgk.eot?jf23wb#iefix') format('embedded-opentype'),
+    url('./../fonts/icomoon/mgk.ttf?jf23wb') format('truetype'),
+    url('./../fonts/icomoon/mgk.woff?jf23wb') format('woff'),
+    url('./../fonts/icomoon/mgk.svg?jf23wb#mgk') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+[class^="icon-"],
+[class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'Mnogogrannik' !important;
+  font-family: 'mgk' !important;
   speak: never;
   font-style: normal;
   font-weight: normal;
@@ -28,51 +29,67 @@
 .icon-arrow:before {
   content: "\e900";
 }
+
 .icon-arrow-long:before {
   content: "\e901";
 }
+
 .icon-arrow-stroke:before {
   content: "\e902";
 }
+
 .icon-chevron-down:before {
   content: "\e903";
 }
+
 .icon-chevron-fill:before {
   content: "\e904";
 }
+
 .icon-chevron-stroke:before {
   content: "\e905";
 }
+
 .icon-download:before {
   content: "\e906";
 }
+
 .icon-link:before {
   content: "\e907";
 }
+
 .icon-mail:before {
   content: "\e908";
 }
+
 .icon-menu:before {
   content: "\e909";
 }
+
 .icon-minus:before {
   content: "\e90a";
 }
+
 .icon-pdf:before {
   content: "\e90b";
 }
+
 .icon-phone:before {
   content: "\e90c";
 }
+
 .icon-plus:before {
   content: "\e90d";
 }
+
 .icon-telegram:before {
   content: "\e90e";
 }
+
 .icon-user:before {
   content: "\e90f";
 }
+
 .icon-whatsapp:before {
   content: "\e910";
 }
