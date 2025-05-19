@@ -98,7 +98,10 @@
 
 .component {
   pointer-events: none;
-  will-change: transform;
+
+  &__item {
+    will-change: transform;
+  }
 
   &--1 {
     display: block;
@@ -284,7 +287,7 @@
     // gap: 2rem;
     padding: 4rem;
     background-color: var(--white);
-    transition: all 0.3s linear;
+    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
     cursor: pointer;

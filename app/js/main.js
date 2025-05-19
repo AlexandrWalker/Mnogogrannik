@@ -92,7 +92,7 @@
      */
     function accordionFunc() {
       var accordionHead = document.querySelectorAll('.accordion'),
-        accordionActive = document.getElementsByClassName('active');
+        accordionActive = document.getElementsByClassName('accordion-active');
 
       Array.from(accordionHead).forEach(function (accordionItem, i, accordionHead) {
         accordionItem.addEventListener('click', function (e) {
@@ -101,15 +101,14 @@
           //   return;
           // }
           if (accordionActive.length > 0 && accordionActive[0] !== this) {
-            accordionActive[0].classList.remove('active');
+            accordionActive[0].classList.remove('accordion-active');
           }
-          this.classList.toggle('active');
+          this.classList.toggle('accordion-active');
 
           ScrollTrigger.refresh();
         });
       });
     }
-
     accordionFunc();
 
 
@@ -157,7 +156,6 @@
 
       document.querySelectorAll('.menu__list a').forEach((element) => element.addEventListener('click', closeMenu));
     }
-
     burgerNav();
 
 
@@ -229,7 +227,6 @@
         });
       }
     };
-
     modalFunc();
 
 
@@ -320,6 +317,7 @@
         opacity: 1,
         y: -500,
         duration: 0.6,
+        delay: 0.2,
         scrollTrigger: {
           trigger: hero,
           start: "top 80%",
@@ -332,7 +330,7 @@
         opacity: 1,
         y: -1200,
         duration: 0.6,
-        delay: 0.6,
+        delay: 0.8,
         scrollTrigger: {
           trigger: hero,
           start: "top 80%",
@@ -345,7 +343,7 @@
         opacity: 1,
         y: -1200,
         duration: 0.6,
-        delay: 0.6,
+        delay: 0.8,
         scrollTrigger: {
           trigger: hero,
           start: "top 80%",
@@ -358,6 +356,7 @@
         opacity: 1,
         y: 1200,
         duration: 0.6,
+        delay: 0.2,
         scrollTrigger: {
           trigger: hero,
           start: "top 80%",
@@ -450,7 +449,7 @@
       parallaxFunc()
     }
 
-    window.addEventListener('resize', function () {
+    window.addEventListener('resize load', function () {
       if (window.innerWidth >= 769) {
         parallaxFunc()
       } else {
@@ -671,6 +670,26 @@
       }
     });
 
+    // window.addEventListener('scroll', function () {
+    //   const features = document.querySelector('.features');
+    //   if (features) {
+    //     const featuresItems = document.querySelectorAll('.features__item');
+    //     featuresItems.forEach(featuresItem => {
+    //       const featuresRect = featuresItem.getBoundingClientRect();
+    //       if (featuresRect.top < 250) {
+
+    //         const featuresActive = document.getElementsByClassName('features-active');
+    //         if (featuresActive.length > 0 && featuresActive[0] !== this) {
+    //           featuresActive[0].classList.remove('features-active');
+    //         }
+
+    //         featuresItem.classList.add('features-active');
+    //       }
+    //     });
+
+    //   }
+    // });
+
 
 
     /**
@@ -687,6 +706,8 @@
 
 /*=================Скрипт для блока со скролом=====================*/
 const tasks = document.querySelector('.tasks');
+const features = document.querySelector('.features');
+
 if (tasks) {
   var len = $('.tasks__item').length;
   $(window).on('resize load', function () {

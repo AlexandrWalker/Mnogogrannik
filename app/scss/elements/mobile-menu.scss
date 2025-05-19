@@ -31,7 +31,7 @@
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: var(--primary-black-80);
     z-index: 201;
     transition: 0.3s;
     opacity: 0;
