@@ -260,7 +260,7 @@
 .features {
   position: relative;
   z-index: 30;
-  // overflow: visible;
+  overflow: hidden;
 
   &__inner {
     // position: relative;
@@ -358,6 +358,8 @@
 
 .clients {
   overflow: hidden;
+  position: relative;
+  z-index: 30;
 
   .section__head {
     margin-bottom: 0;
@@ -483,6 +485,8 @@
 }
 
 .products {
+  position: relative;
+  z-index: 30;
 
   &__items {
     display: flex;

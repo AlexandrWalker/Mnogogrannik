@@ -204,6 +204,12 @@
     display: block;
   }
 
+  .main_romb-1,
+  .main_romb-2,
+  .main_romb-3 {
+    display: none;
+  }
+
   .header__inner {
     display: flex;
     justify-content: space-between;

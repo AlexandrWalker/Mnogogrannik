@@ -320,7 +320,6 @@
         opacity: 1,
         y: -500,
         duration: 0.6,
-        delay: 0.6,
         scrollTrigger: {
           trigger: hero,
           start: "top 80%",
@@ -333,7 +332,7 @@
         opacity: 1,
         y: -1200,
         duration: 0.6,
-        delay: 1.2,
+        delay: 0.6,
         scrollTrigger: {
           trigger: hero,
           start: "top 80%",
@@ -346,7 +345,7 @@
         opacity: 1,
         y: -1200,
         duration: 0.6,
-        delay: 1.2,
+        delay: 0.6,
         scrollTrigger: {
           trigger: hero,
           start: "top 80%",
@@ -359,7 +358,6 @@
         opacity: 1,
         y: 1200,
         duration: 0.6,
-        delay: 0.6,
         scrollTrigger: {
           trigger: hero,
           start: "top 80%",
