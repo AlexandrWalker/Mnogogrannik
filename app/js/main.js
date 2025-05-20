@@ -449,7 +449,7 @@
       parallaxFunc()
     }
 
-    window.addEventListener('resize load', function () {
+    window.addEventListener('resize', function () {
       if (window.innerWidth >= 769) {
         parallaxFunc()
       } else {
@@ -458,7 +458,6 @@
     }, true);
 
     function parallaxFunc() {
-
       const parallaxContainers = document.querySelectorAll('[data-animation="parallax"]');
       parallaxContainers.forEach(parallaxContainer => {
         gsap.fromTo(parallaxContainer, {
@@ -476,9 +475,7 @@
 
       const parallaxImgContainers = document.querySelectorAll('[data-animation="parallax-img"]');
       parallaxImgContainers.forEach(parallaxImgContainer => {
-
         const image = parallaxImgContainer.querySelector('img');
-
         gsap.fromTo(image,
           { y: '-5%' },
           {
