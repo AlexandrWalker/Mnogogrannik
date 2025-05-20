@@ -541,13 +541,13 @@
         cookiesNotify.style.display = 'block';
       }
     }
-
     // const warningBtn = document.getElementById('warning-btn');
     // if (warningBtn) {
     //   warningBtn.addEventListener('click', event => {
     //     document.getElementById('warning-plate').style.display = 'none';
     //   });
     // }
+
 
 
     /**
@@ -637,7 +637,6 @@
         }
       })
     }
-
     headerFunc();
 
 
@@ -667,26 +666,6 @@
       }
     });
 
-    // window.addEventListener('scroll', function () {
-    //   const features = document.querySelector('.features');
-    //   if (features) {
-    //     const featuresItems = document.querySelectorAll('.features__item');
-    //     featuresItems.forEach(featuresItem => {
-    //       const featuresRect = featuresItem.getBoundingClientRect();
-    //       if (featuresRect.top < 250) {
-
-    //         const featuresActive = document.getElementsByClassName('features-active');
-    //         if (featuresActive.length > 0 && featuresActive[0] !== this) {
-    //           featuresActive[0].classList.remove('features-active');
-    //         }
-
-    //         featuresItem.classList.add('features-active');
-    //       }
-    //     });
-
-    //   }
-    // });
-
 
 
     /**
@@ -703,11 +682,11 @@
 
 /*=================Скрипт для блока со скролом=====================*/
 const tasks = document.querySelector('.tasks');
-const features = document.querySelector('.features');
 
 if (tasks) {
   var len = $('.tasks__item').length;
   $(window).on('resize load', function () {
+
     if (window.innerWidth < "767") {
       scroll = 0;
       inc = 0.06; // speed down
@@ -739,7 +718,8 @@ if (tasks) {
           }
         } else if (scroll < top) {
           // Scrolling down
-          if (distanceToTop < 150 && $activeBlock.attr('data-index') != len) {
+
+          if (distanceToTop < 200 && $activeBlock.attr('data-index') != len) {
             var $nextBlock = $activeBlock.next();
             $activeBlock.removeClass('active');
             $nextBlock.addClass('active');
@@ -803,6 +783,7 @@ if (tasks) {
         scroll = top; // Update scroll position
       });
     } else {
+
       scroll = 0;
       inc = 0.006; // speed down
       inc2 = 0.008; // speed up
@@ -812,9 +793,9 @@ if (tasks) {
       $(window).on('scroll', function () {
         // Find the active element
         var $activeBlock = $('.active');
-        var element = document.querySelector('.active');
+        var element = tasks.querySelector('.active');
         var h = element.clientHeight / 200;
-        var distanceToTop = $activeBlock.offset().top - $(window).scrollTop();
+        var distanceToTop = $activeBlock.offset().top - $(window).scrollTop() - 130;
         var top = window.pageYOffset;
 
         // Scroll direction checks
@@ -831,6 +812,7 @@ if (tasks) {
             }
           }
         } else if (scroll < top) {
+
           // Scrolling down
           if (distanceToTop < h && $activeBlock.attr('data-index') != len) {
             var $nextBlock = $activeBlock.next();
