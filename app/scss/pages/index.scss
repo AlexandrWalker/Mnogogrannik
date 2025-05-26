@@ -33,9 +33,12 @@
   &__text {
     margin-bottom: 5rem;
     max-width: 62rem;
+    font-size: 2.4rem;
+    color: var(--white);
 
     p {
-      color: var(--white);
+      font-size: inherit;
+      color: inherit;
     }
   }
 
@@ -1001,7 +1004,6 @@
     bottom: 7rem;
     left: 14rem;
     z-index: 3;
-    display: none;
   }
 
   .swiper-button-prev,

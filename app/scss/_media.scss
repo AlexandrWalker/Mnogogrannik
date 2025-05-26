@@ -312,7 +312,7 @@
     margin-bottom: 3rem;
   }
 
-  .hero__text p {
+  .hero__text {
     font-size: 1.6rem;
   }
 
@@ -1077,7 +1077,8 @@
   //   font-size: 1.6rem;
   // }
 
-  .form-file {
+  .form-file,
+  .form-file-clear {
     font-size: 1.2rem;
     margin: 0;
   }

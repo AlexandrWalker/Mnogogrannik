@@ -28,6 +28,7 @@
   <link rel="stylesheet" href="./css/icomoon-style.css">
   <link rel="stylesheet" href="./css/style.css?v=13">
 </head>
+
 <body>
   <div class="wrapper">
     <!-- Бургер меню -->
@@ -1252,12 +1253,14 @@
                   <textarea class="form-textarea" name="comments" id="" placeholder="Комментарий"
                     tabindex="4"></textarea>
                 </div>
-                <div class="form-group">
-                  <input class="form-file-input" id="form-file" type="file" tabindex="5">
+                <div class="form-group form-file-wrap">
+                  <input class="form-file-input" id="form-file" type="file" value="" tabindex="5">
                   <label class="form-file" for="form-file">
-                    <div><i class="icon-link"></i> <span>Прикрепить техническое задание</span></div> <span>(не более 20
+                    <div><i class="icon-link"></i> <span class="form-file-text">Прикрепить техническое задание</span>
+                    </div> <span>(не более 20
                       мегабайт)</span>
                   </label>
+                  <div id="clear" class="form-file-clear">Удалить</div>
                 </div>
                 <button class="form-btn btn btn-black" type="submit" tabindex="7">
                   Отправить заявку
@@ -1420,19 +1423,20 @@
             </div>
             <div class="form-group">
               <input class="form-input" type="email" name="pochta" placeholder="Эл. почта" tabindex="3"
-                pattern="^\S+@\S+\.\S+$" minlength="2" maxlength="40">
+                pattern="^\S+@\S+\.\S+$" minlength="2" maxlength="40" required>
               <i class="icon-mail"></i>
             </div>
             <div class="form-group">
               <textarea class="form-textarea" name="comments" id="" placeholder="Комментарий" tabindex="4"></textarea>
             </div>
-            <button class="form-btn btn btn-black modal__btn" data-id="modal-success" type="submit" tabindex="7">
+            <button class="form-btn btn btn-black" type="submit" tabindex="7">
               Отправить заявку
             </button>
             <div class="form-bottom">
               <input class="form-checkbox" type="checkbox" tabindex="6" required>
               <p class="form-text">
-                Нажимая кнопку «Рассчитать стоимость доставки», <a href="/Mnogogrannik/privacy.html">вы принимаете условия обработки
+                Нажимая кнопку «Рассчитать стоимость доставки», <a href="/Mnogogrannik/privacy.html">вы принимаете условия
+                  обработки
                   пользовательских данных</a>
               </p>
             </div>

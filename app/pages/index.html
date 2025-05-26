@@ -1,4 +1,5 @@
 <!--=include head.html-->
+
 <body>
   <div class="wrapper">
     <!--=include header.html-->
@@ -1063,12 +1064,14 @@
                   <textarea class="form-textarea" name="comments" id="" placeholder="Комментарий"
                     tabindex="4"></textarea>
                 </div>
-                <div class="form-group">
-                  <input class="form-file-input" id="form-file" type="file" tabindex="5">
+                <div class="form-group form-file-wrap">
+                  <input class="form-file-input" id="form-file" type="file" value="" tabindex="5">
                   <label class="form-file" for="form-file">
-                    <div><i class="icon-link"></i> <span>Прикрепить техническое задание</span></div> <span>(не более 20
+                    <div><i class="icon-link"></i> <span class="form-file-text">Прикрепить техническое задание</span>
+                    </div> <span>(не более 20
                       мегабайт)</span>
                   </label>
+                  <div id="clear" class="form-file-clear">Удалить</div>
                 </div>
                 <button class="form-btn btn btn-black" type="submit" tabindex="7">
                   Отправить заявку

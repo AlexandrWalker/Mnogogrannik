@@ -9,6 +9,7 @@
         slidesPerView: 1,
         spaceBetween: 0,
         centeredSlides: true,
+        watchOverflow: true,
         loop: true,
         speed: 600,
         effect: "fade",
@@ -28,7 +29,14 @@
           prevEl: ".swiper-button-prev",
         },
       });
+
+      if ($(".hero__slider .swiper-slide").length == 1) {
+        $('.hero__slider .swiper-wrapper').addClass("disabled");
+        $('.hero__slider .swiper-buttons').addClass("disabled");
+      }
     }
+
+
 
     const clients__slider = document.querySelector('.clients__slider');
     if (clients__slider) {
@@ -38,6 +46,7 @@
         slidesPerGroup: 1,
         speed: 600,
         loop: true,
+        init: false,
         breakpoints: {
           769: {
             slidesPerView: 3,
@@ -49,6 +58,24 @@
           prevEl: ".swiper-button-prev",
         },
       });
+
+      const clientsSlide = document.querySelectorAll('.clients__slide');
+      if (clientsSlide.length > 3) {
+        const count = clientsSlide.length;
+
+        for (let i = 0; i < count; ++i) {
+          const clientsSlideCopy = clientsSlide[i].cloneNode(true);
+          clientsSlide[i].parentNode.append(clientsSlideCopy);
+          clientsSlideCopy.classList.add('clone');
+        }
+      }
+
+      if (document.querySelectorAll('.clients__slide').length <= 3) {
+        $('.clients .swiper-wrapper').addClass("disabled");
+        $('.clients .swiper-buttons').addClass("disabled");
+      }
+
+      clientsSlider.init();
     }
 
     const work__items = document.querySelector('.work__items');
@@ -56,6 +83,7 @@
       var workItems = new Swiper(work__items, {
         slidesPerView: 'auto',
         slidesPerGroup: 1,
+        watchOverflow: true,
         speed: 600,
         breakpoints: {
           600: {
@@ -72,6 +100,7 @@
         slidesPerGroup: 1,
         spaceBetween: 0,
         centeredSlides: true,
+        watchOverflow: true,
         loop: true,
         speed: 600,
         effect: "fade",
@@ -83,6 +112,11 @@
           prevEl: ".swiper-button-prev",
         },
       });
+
+      if ($(".mission__slider .swiper-slide").length == 1) {
+        $('.mission__slider .swiper-wrapper').addClass("disabled");
+        $('.mission__slider .swiper-buttons').addClass("disabled");
+      }
     }
 
 
@@ -638,6 +672,29 @@
       })
     }
     headerFunc();
+
+
+
+    const clearBtn = document.querySelector("#clear"),
+      clearBtnParent = clearBtn.parentNode,
+      control = clearBtnParent.querySelector(".form-file-input"),
+      controlText = clearBtnParent.querySelector(".form-file-text");
+
+    // Событие по клику на кнопку
+    clearBtn.addEventListener("click", function () {
+      control.value = '';
+      // let newControl = control.cloneNode(true)
+      // control.replaceWith(newControl);
+      // control = newControl;
+      controlText.innerHTML = 'Прикрепить техническое задание';
+      clearBtn.style.display = 'none';
+    });
+
+    document.querySelector('input[type="file"]').addEventListener('change', function () {
+      controlText.innerHTML = this.files[0].name;
+      clearBtn.style.display = 'block';
+    });
+
 
 
     /**
