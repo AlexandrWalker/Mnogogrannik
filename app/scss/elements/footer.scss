@@ -216,13 +216,14 @@
     }
 
     &-text {
+      display: block;
       font-weight: 400;
       font-size: 1.4rem;
       line-height: 143%;
       color: inherit;
+      width: fit-content;
 
       &:last-child {
-        text-align: right;
 
         &:hover {
           text-decoration: underline;
@@ -231,11 +232,28 @@
     }
 
     &-link {
+      display: block;
       text-align: center;
       font-weight: 400;
       font-size: 1.4rem;
       text-decoration: underline;
       color: inherit;
+      width: fit-content;
+    }
+
+    &-wrap {
+
+      &:nth-child(2) {
+        .footer__bottom-link {
+          margin: 0 auto;
+        }
+      }
+
+      &:nth-child(3) {
+        .footer__bottom-text {
+          margin: 0 0 0 auto;
+        }
+      }
     }
   }
 }

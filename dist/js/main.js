@@ -675,25 +675,25 @@
 
 
 
-    const clearBtn = document.querySelector("#clear"),
-      clearBtnParent = clearBtn.parentNode,
-      control = clearBtnParent.querySelector(".form-file-input"),
-      controlText = clearBtnParent.querySelector(".form-file-text");
+    // const clearBtn = document.querySelector("#clear"),
+    //   clearBtnParent = clearBtn.parentNode,
+    //   control = clearBtnParent.querySelector(".form-file-input"),
+    //   controlText = clearBtnParent.querySelector(".form-file-text");
 
-    // Событие по клику на кнопку
-    clearBtn.addEventListener("click", function () {
-      control.value = '';
-      // let newControl = control.cloneNode(true)
-      // control.replaceWith(newControl);
-      // control = newControl;
-      controlText.innerHTML = 'Прикрепить техническое задание';
-      clearBtn.style.display = 'none';
-    });
+    // // Событие по клику на кнопку
+    // clearBtn.addEventListener("click", function () {
+    //   control.value = '';
+    //   // let newControl = control.cloneNode(true)
+    //   // control.replaceWith(newControl);
+    //   // control = newControl;
+    //   controlText.innerHTML = 'Прикрепить техническое задание';
+    //   clearBtn.style.display = 'none';
+    // });
 
-    document.querySelector('input[type="file"]').addEventListener('change', function () {
-      controlText.innerHTML = this.files[0].name;
-      clearBtn.style.display = 'block';
-    });
+    // document.querySelector('input[type="file"]').addEventListener('change', function () {
+    //   controlText.innerHTML = this.files[0].name;
+    //   clearBtn.style.display = 'flex';
+    // });
 
 
 

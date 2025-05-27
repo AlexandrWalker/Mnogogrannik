@@ -245,7 +245,6 @@ section {
   flex-direction: column;
   position: relative;
   min-height: 100dvh;
-  overflow-x: hidden;
 }
 
 .main {
@@ -346,6 +345,7 @@ a {
   font-size: var(--button-font-size);
   text-transform: uppercase;
   border-radius: var(--button-border-radius);
+  pointer-events: all;
 }
 
 .btn:hover {
@@ -355,6 +355,7 @@ a {
 
 .btn:disabled {
   opacity: var(--button-disabled-opacity);
+  pointer-events: none;
 }
 
 .btn-accent {
@@ -474,6 +475,9 @@ a {
 .form-text a:hover {
   color: var(--primary-black);
 }
+.form-text a:last-letter {
+  color: var(--primary-accent);
+}
 .form-input {
   font-weight: 700;
   font-size: 1.6rem;
@@ -502,9 +506,6 @@ a {
 }
 .form-input:focus::placeholder, .form-input:active::placeholder {
   color: var(--white);
-}
-.form-input:invalid {
-  background-color: red;
 }
 .form-btn {
   margin-bottom: 2rem;
@@ -599,11 +600,32 @@ a {
   gap: 0.5rem;
 }
 .form-file-clear {
-  display: none;
+  display: flex;
+  align-items: center;
   font-weight: 600;
   font-size: 1.4rem;
   line-height: 143%;
   margin-top: -1rem;
+  color: var(--primary-black);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.form-file-clear::before {
+  content: "";
+  display: block;
+  width: 2.4rem;
+  height: 2.4rem;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGQ9Ik0xOCA2TDYgMThNMTggMThMNiA2LjAwMDAxIiBzdHJva2U9IiMzMjMzM0IiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+DQo8L3N2Zz4NCg==);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  transition: all 0.3s ease;
+}
+.form-file-clear:hover {
+  color: var(--white);
+}
+.form-file-clear:hover::before {
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGQ9Ik0xOCA2TDYgMThNMTggMThMNiA2LjAwMDAxIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+DQo8L3N2Zz4=);
 }
 .form-btn:hover {
   --button-color: var(--primary-black);
@@ -717,6 +739,16 @@ a {
   top: 358.1rem;
   left: -231.5rem;
   z-index: -1;
+}
+
+.components {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  overflow: hidden;
 }
 
 /* component styles */
@@ -881,23 +913,30 @@ a {
   padding: 1rem 0;
 }
 .footer__bottom-text {
+  display: block;
   font-weight: 400;
   font-size: 1.4rem;
   line-height: 143%;
   color: inherit;
-}
-.footer__bottom-text:last-child {
-  text-align: right;
+  width: fit-content;
 }
 .footer__bottom-text:last-child:hover {
   text-decoration: underline;
 }
 .footer__bottom-link {
+  display: block;
   text-align: center;
   font-weight: 400;
   font-size: 1.4rem;
   text-decoration: underline;
   color: inherit;
+  width: fit-content;
+}
+.footer__bottom-wrap:nth-child(2) .footer__bottom-link {
+  margin: 0 auto;
+}
+.footer__bottom-wrap:nth-child(3) .footer__bottom-text {
+  margin: 0 0 0 auto;
 }
 
 .header {
@@ -1457,6 +1496,7 @@ a {
   display: flex;
   flex-direction: row;
   position: relative;
+  height: 89.8rem;
 }
 .hero__content {
   padding: 20rem 34rem 20rem 8rem;
@@ -1819,15 +1859,19 @@ a {
   line-height: 100%;
 }
 .clients__item-title {
+  margin-bottom: 2rem;
+}
+.clients__item-title h3 {
   font-weight: 700;
   font-size: inherit;
   text-transform: uppercase;
-  margin-bottom: 2rem;
 }
 .clients__item-text {
+  margin-bottom: 2rem;
+}
+.clients__item-text p {
   font-weight: 400;
   font-size: inherit;
-  margin-bottom: 2rem;
 }
 .clients__item-link {
   display: flex;
@@ -2161,6 +2205,7 @@ a {
   margin-bottom: 6rem;
 }
 .mission__quote p {
+  display: inline;
   font-weight: 400;
   font-size: 3.4rem;
   line-height: 100%;
@@ -2168,19 +2213,19 @@ a {
   text-transform: uppercase;
   color: var(--primary-accent);
 }
-.mission__quote p::before {
+.mission__quote::before {
   content: "“";
   font-weight: 700;
   font-size: 3.4rem;
   color: var(--primary-black);
-  margin-right: -1rem;
+  margin-right: -0.5rem;
 }
-.mission__quote p::after {
+.mission__quote::after {
   content: "”";
   font-weight: 700;
   font-size: 3.4rem;
   color: var(--primary-black);
-  margin-left: -1rem;
+  margin-left: -0.5rem;
 }
 .mission__wrap {
   display: flex;
@@ -2682,6 +2727,9 @@ a {
   .hero {
     overflow: hidden;
   }
+  .hero__item {
+    height: 72.9rem;
+  }
   .hero__content {
     height: 72.9rem;
     padding: 12.5rem 15rem 12.5rem 4rem;
@@ -3034,6 +3082,9 @@ a {
   .tasks .section__head h2 {
     margin-bottom: 2rem;
   }
+  .tasks .section__head p {
+    font-size: 1.6rem;
+  }
   .tasks__body {
     margin-top: 3rem;
     margin-left: 0;
@@ -3094,11 +3145,11 @@ a {
   .mission__quote p {
     font-size: 2.4rem;
   }
-  .mission__quote p::before {
+  .mission__quote::before {
     font-size: 2.4rem;
     margin-right: -0.5rem;
   }
-  .mission__quote p::after {
+  .mission__quote::after {
     font-size: 2.4rem;
     margin-left: -0.5rem;
   }
@@ -3423,6 +3474,23 @@ a {
   .products__item p {
     font-size: 1.6rem;
   }
+  .footer__bottom-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer__bottom-text:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+  .footer__bottom-link {
+    margin-bottom: 1rem;
+  }
+  .footer__bottom-wrap:not(:nth-child(2)) {
+    margin-bottom: 1rem;
+  }
+  .footer__bottom-wrap:nth-child(2) {
+    order: 3;
+  }
 }
 @media (max-width: 600px) {
   .container {
@@ -3630,11 +3698,11 @@ a {
   .mission__quote p {
     font-size: 2rem;
   }
-  .mission__quote p::before {
+  .mission__quote::before {
     font-size: 2rem;
     margin-right: -0.5rem;
   }
-  .mission__quote p::after {
+  .mission__quote::after {
     font-size: 2rem;
     margin-left: -0.5rem;
   }
@@ -3735,17 +3803,6 @@ a {
   .footer__contact {
     max-width: 28.6rem;
     margin-bottom: 3rem;
-  }
-  .footer__bottom-inner {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .footer__bottom-text:not(:last-child) {
-    margin-bottom: 1rem;
-  }
-  .footer__bottom-link {
-    margin-bottom: 1rem;
   }
   /* form */
   .form-input {

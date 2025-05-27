@@ -1,6 +1,5 @@
 .hero {
   height: fit-content;
-  // min-height: 100vh;
   position: relative;
   background-color: var(--primary-black);
 
@@ -8,6 +7,7 @@
     display: flex;
     flex-direction: row;
     position: relative;
+    height: 89.8rem;
   }
 
   &__content {
@@ -457,16 +457,22 @@
     }
 
     &-title {
-      font-weight: 700;
-      font-size: inherit;
-      text-transform: uppercase;
       margin-bottom: 2rem;
+
+      h3 {
+        font-weight: 700;
+        font-size: inherit;
+        text-transform: uppercase;
+      }
     }
 
     &-text {
-      font-weight: 400;
-      font-size: inherit;
       margin-bottom: 2rem;
+
+      p {
+        font-weight: 400;
+        font-size: inherit;
+      }
     }
 
     &-link {
@@ -949,6 +955,7 @@
     margin-bottom: 6rem;
 
     p {
+      display: inline;
       font-weight: 400;
       font-size: 3.4rem;
       line-height: 100%;
@@ -957,20 +964,20 @@
       color: var(--primary-accent);
     }
 
-    p::before {
+    &::before {
       content: "“";
       font-weight: 700;
       font-size: 3.4rem;
       color: var(--primary-black);
-      margin-right: -1rem;
+      margin-right: -0.5rem;
     }
 
-    p::after {
+    &::after {
       content: "”";
       font-weight: 700;
       font-size: 3.4rem;
       color: var(--primary-black);
-      margin-left: -1rem;
+      margin-left: -0.5rem;
     }
   }
 

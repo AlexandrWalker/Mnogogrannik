@@ -265,7 +265,9 @@
     overflow: hidden;
   }
 
-  .hero__item {}
+  .hero__item {
+    height: 72.9rem;
+  }
 
   .hero__content {
     height: 72.9rem;
@@ -749,6 +751,10 @@
     margin-bottom: 2rem;
   }
 
+  .tasks .section__head p {
+    font-size: 1.6rem;
+  }
+
   .tasks__body {
     margin-top: 3rem;
     margin-left: 0;
@@ -835,12 +841,12 @@
     font-size: 2.4rem;
   }
 
-  .mission__quote p::before {
+  .mission__quote::before {
     font-size: 2.4rem;
     margin-right: -0.5rem;
   }
 
-  .mission__quote p::after {
+  .mission__quote::after {
     font-size: 2.4rem;
     margin-left: -0.5rem;
   }
@@ -1278,6 +1284,29 @@
   .products__item p {
     font-size: 1.6rem;
   }
+
+  .footer__bottom-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    // gap: 1rem;
+  }
+
+  .footer__bottom-text:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+
+  .footer__bottom-link {
+    margin-bottom: 1rem;
+  }
+
+  .footer__bottom-wrap:not(:nth-child(2)) {
+    margin-bottom: 1rem;
+  }
+
+  .footer__bottom-wrap:nth-child(2) {
+    order: 3;
+  }
 }
 
 @media (max-width: 600px) {
@@ -1585,12 +1614,12 @@
     font-size: 2rem;
   }
 
-  .mission__quote p::before {
+  .mission__quote::before {
     font-size: 2rem;
     margin-right: -0.5rem;
   }
 
-  .mission__quote p::after {
+  .mission__quote::after {
     font-size: 2rem;
     margin-left: -0.5rem;
   }
@@ -1722,21 +1751,6 @@
   .footer__contact {
     max-width: 28.6rem;
     margin-bottom: 3rem;
-  }
-
-  .footer__bottom-inner {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    // gap: 1rem;
-  }
-
-  .footer__bottom-text:not(:last-child) {
-    margin-bottom: 1rem;
-  }
-
-  .footer__bottom-link {
-    margin-bottom: 1rem;
   }
 
   /* form */
