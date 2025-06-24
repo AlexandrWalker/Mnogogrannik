@@ -2641,6 +2641,12 @@ a {
   padding: 0 8rem;
   overflow-x: visible;
 }
+.dealers__slider::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+}
 .dealers__slide {
   background-color: var(--white);
   overflow: hidden;

@@ -689,6 +689,13 @@
     margin-left: -8rem;
     padding: 0 8rem;
     overflow-x: visible;
+
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+      padding: 0;
+      margin: 0;
+    }
   }
 
   &__slide {
