@@ -16,6 +16,9 @@
         fadeEffect: {
           crossFade: true
         },
+        mousewheel: {
+          forceToAxis: true,
+        },
         // autoplay: {
         //   delay: 5000,
         //   disableOnInteraction: false
@@ -45,6 +48,9 @@
         speed: 600,
         loop: true,
         init: false,
+        mousewheel: {
+          forceToAxis: true,
+        },
         breakpoints: {
           769: {
             slidesPerView: 3,
@@ -83,6 +89,9 @@
         slidesPerGroup: 1,
         watchOverflow: true,
         speed: 600,
+        mousewheel: {
+          forceToAxis: true,
+        },
         breakpoints: {
           600: {
             slidesPerView: 6,
@@ -105,6 +114,9 @@
         fadeEffect: {
           crossFade: true
         },
+        mousewheel: {
+          forceToAxis: true,
+        },
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -125,6 +137,9 @@
         slidesPerGroup: 1,
         speed: 600,
         loop: true,
+        mousewheel: {
+          forceToAxis: true,
+        },
         breakpoints: {
           769: {
             slidesPerView: 4,
