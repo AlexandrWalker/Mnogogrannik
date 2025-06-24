@@ -2679,6 +2679,9 @@ a {
   z-index: 2;
   color: inherit;
   height: 100%;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 .dealers__item:hover {
   border-color: var(--primary-accent);
@@ -2751,6 +2754,9 @@ a {
   font-weight: 400;
   font-size: 2.4rem;
   line-height: 100%;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 .dealers__item-link i {
   font-size: 2.4rem;
@@ -2772,6 +2778,9 @@ a {
   position: absolute;
   top: -0.1rem;
   right: -0.1rem;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 .dealers__item span i {
   font-size: 6rem;
