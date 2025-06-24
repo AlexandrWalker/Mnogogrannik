@@ -36,8 +36,6 @@
       }
     }
 
-
-
     const clients__slider = document.querySelector('.clients__slider');
     if (clients__slider) {
       var clientsSlider = new Swiper(clients__slider, {
@@ -54,8 +52,8 @@
           }
         },
         navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
+          nextEl: ".clients-button-next",
+          prevEl: ".clients-button-prev",
         },
       });
 
@@ -118,6 +116,27 @@
         $('.mission__slider .swiper-buttons').addClass("disabled");
       }
     }
+
+    const dealers__slider = document.querySelector('.dealers__slider');
+    if (dealers__slider) {
+      var clientsSlider = new Swiper(dealers__slider, {
+        slidesPerView: 'auto',
+        spaceBetween: 10,
+        slidesPerGroup: 1,
+        speed: 600,
+        loop: true,
+        breakpoints: {
+          769: {
+            slidesPerView: 4,
+            spaceBetween: 20,
+          }
+        },
+        navigation: {
+          nextEl: ".dealers-button-next",
+          prevEl: ".dealers-button-prev",
+        },
+      });
+    };
 
 
 

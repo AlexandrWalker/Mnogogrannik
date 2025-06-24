@@ -1,6 +1,8 @@
 /* libs styles */
 
-.swiper {
+.swiper,
+.clients,
+.dealers {
 
   &-pagination {
     font-size: 1rem;
@@ -66,7 +68,9 @@
       display: none;
     }
 
-    .swiper-button-next {
+    .swiper-button-next,
+    .clients-button-next,
+    .dealers-button-next {
       margin-left: 2rem;
     }
 

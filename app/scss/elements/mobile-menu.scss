@@ -4,15 +4,11 @@
   bottom: 0;
   right: -100%;
   z-index: 200;
-  // opacity: 0;
-  // visibility: hidden;
   pointer-events: none;
   transition: all 0.3s ease;
 
   &--opened {
     right: 0;
-    // opacity: 1;
-    // visibility: visible;
     pointer-events: all;
 
     .menu__overlay {
@@ -87,7 +83,6 @@
   &__inner {
     display: flex;
     flex-direction: column;
-    // gap: 4rem;
     background-color: var(--primary-bg);
     padding: 5rem 22rem 8rem 14rem;
     max-width: 110rem;
